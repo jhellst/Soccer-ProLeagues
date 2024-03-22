@@ -1,0 +1,24 @@
+soccer-pro-leagues-backend/.env
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+soccer-pro-leagues-frontend/node_modules
+soccer-pro-leagues-frontend/.pnp
+soccer-pro-leagues-frontend/.pnp.js
+
+# testing
+soccer-pro-leagues-frontend/coverage
+
+# production
+soccer-pro-leagues-frontend/build
+
+# misc
+soccer-pro-leagues-frontend/.DS_Store
+soccer-pro-leagues-frontend/.env.local
+soccer-pro-leagues-frontend/.env.development.local
+soccer-pro-leagues-frontend/.env.test.local
+soccer-pro-leagues-frontend/.env.production.local
+
+soccer-pro-leagues-frontend/npm-debug.log*
+soccer-pro-leagues-frontend/yarn-debug.log*
+soccer-pro-leagues-frontend/yarn-error.log*
