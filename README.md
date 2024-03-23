@@ -257,10 +257,6 @@ Don't forget to give the project a star! Thanks again!
 
 Joshua Hellstrom - [LinkedIn](https://www.linkedin.com/in/joshua-hellstrom/) - [Portfolio Website](https://joshua-hellstrom.surge.sh/) - jhellst@gmail.com
 
-Project Link (Backend): [https://github.com/jhellst/Soccer-ProLeagues-Backend](https://github.com/jhellst/Soccer-ProLeagues-Backend)
-
-Project Link (Frontend): [https://github.com/jhellst/Soccer-ProLeagues-Frontend](https://github.com/jhellst/Soccer-ProLeagues-Frontend)
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
