@@ -34,6 +34,11 @@ app.config["JWT_SECRET_KEY"] = os.environ['SECRET_KEY']
 app.config["JWT_ACCESS_TOKEN_EXPIRES"] = timedelta(hours=1)
 jwt = JWTManager(app)
 
+@jwt.expired_token_loader
+def my_expired_token_callback(expired_token, date):
+    print("Hello from jwt_expired_decorator")
+    return redirect(url_for('logout_user'))
+
 connect_db(app)
 
 

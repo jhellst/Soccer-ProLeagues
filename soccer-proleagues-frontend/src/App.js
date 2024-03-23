@@ -79,13 +79,15 @@ function App() {
           SoccerLeaguesApi.token = token;
           // const decoded = jwtDecode(JSON.stringify(token));
           const decoded = jwtDecode(token);
+
+          if (decoded.exp * 1000 < Date.now()) {
+            logout(); // Removes token/user if
+          }
+
           const user = JSON.parse(decoded.sub);
           const user_id = user.user_id;
           const userData = await SoccerLeaguesApi.getUserInfo(user_id);
           updateUser(userData);
-          if (!userData) {
-            logout(); // Removes token/user if
-          }
 
         }
         catch (err) {
