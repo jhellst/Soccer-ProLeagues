@@ -257,7 +257,7 @@ Don't forget to give the project a star! Thanks again!
 
 Joshua Hellstrom - [LinkedIn](https://www.linkedin.com/in/joshua-hellstrom/) - [Portfolio Website](https://joshua-hellstrom.surge.sh/) - jhellst@gmail.com
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<!-- <p align="right">(<a href="#readme-top">back to top</a>)</p> -->
 
 
 
