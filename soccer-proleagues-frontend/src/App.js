@@ -259,7 +259,6 @@ function App() {
     async function submitFollowedLeagues(newFollowedLeagues) {
       for (const league_id in newFollowedLeagues) {
         if (newFollowedLeagues[league_id]) {
-          console.log("SSSS", user.user_id, league_id);
           await SoccerLeaguesApi.followLeague(user.user_id, league_id);
         }
         const followedLeagues = await getFollowedLeagues(user.user_id);

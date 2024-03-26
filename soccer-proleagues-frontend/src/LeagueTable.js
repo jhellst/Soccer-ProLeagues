@@ -15,37 +15,27 @@ function LeagueTable({ getLeagueTable }) {
   const teamsAndLeaguesContext = useContext(TeamsAndLeaguesContext);
 
   const leagueInfo = getLeagueTable(leagueId);
-
   const teams = teamsAndLeaguesContext.teams;
   const leagues = teamsAndLeaguesContext.leagues;
 
-
-  useEffect(() => {
-    async function setCurrentLeagueName() {
-      const league = await leagues.filter(league => league.league_id == leagueId);
-      console.log("league@", league);
-      setCurrentLeagueName(league.league_name);
-    }
-  }, leagueId);
+  const curLeague = leagues.filter(league => league.league_id == leagueId);
 
 
   useEffect(() => {
     async function setCurrentLeagueTable() {
       const league = await getLeagueTable(leagueId);
-      console.log("league#", league);
       setLeagueTable(league);
     }
     setCurrentLeagueTable();
   }, leagueId);
 
 
-  console.log("league!!!", leagueName);
-  console.log("leagueTable!!!", leagueTable);
-
-
   if (leagueId) {
 
     return (
+
+      <div className="LeagueTable">
+        <h1 className="LeagueTable-title">{curLeague[0]?.league_name}</h1>
 
       <table className="LeagueTable">
         <thead>
@@ -73,6 +63,8 @@ function LeagueTable({ getLeagueTable }) {
           ))}
 
       </table>
+      </div>
+
 
     );
   } else {
