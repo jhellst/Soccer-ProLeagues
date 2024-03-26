@@ -101,7 +101,7 @@ Of course, no one template will serve all projects since your needs may be diffe
 * [![Flask-SQLAlchemy][Flask-SQLAlchemy]][Flask-SQLAlchemy-url]
 * [![React][React.js]][React-url]
 * [![PostgreSQL][PostgreSQL]][PostgreSQL-url]
-* [![Chart.js][Chart.js]][Chart.js-url]
+<!-- * [![Chart.js][Chart.js]][Chart.js-url] -->
 * [![bs4][bs4]][bs4-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -114,8 +114,8 @@ Of course, no one template will serve all projects since your needs may be diffe
 [PostgreSQL-url]: https://www.postgresql.org/
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
 [React-url]: https://reactjs.org/
-[Chart.js]: https://img.shields.io/badge/chart.js-F5788D.svg?style=for-the-badge&logo=chart.js&logoColor=white
-[Chart.js-url]: https://www.chartjs.org/
+<!-- [Chart.js]: https://img.shields.io/badge/chart.js-F5788D.svg?style=for-the-badge&logo=chart.js&logoColor=white
+[Chart.js-url]: https://www.chartjs.org/ -->
 <!-- [bs4]: -->
 [bs4-url]: https://beautiful-soup-4.readthedocs.io/en/latest/
 <!-- [JSON Web Token] :
