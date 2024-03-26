@@ -33,10 +33,10 @@
     <!-- <br /> -->
     <br />
     <!-- <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a> -->
-    ·
+    <!-- ·
     <a href="https://github.com/jhellst/Soccer-ProLeagues/issues">Report Bug</a>
     ·
-    <a href="https://github.com/jhellst/Soccer-ProLeagues/issues">Request Feature</a>
+    <a href="https://github.com/jhellst/Soccer-ProLeagues/issues">Request Feature</a> -->
   </p>
 </div>
 
@@ -198,7 +198,7 @@ To get a local copy up and running follow these simple example steps. -->
 
 
 <!-- USAGE EXAMPLES -->
-## Usage
+<!-- ## Usage -->
 
 <!-- Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
 
@@ -248,7 +248,7 @@ Don't forget to give the project a star! Thanks again!
 
 <!-- Distributed under the MIT License. See `LICENSE.txt` for more information. -->
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<!-- <p align="right">(<a href="#readme-top">back to top</a>)</p> -->
 
 
 
