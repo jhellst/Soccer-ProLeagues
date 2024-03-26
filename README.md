@@ -153,7 +153,7 @@ To get a local copy up and running follow these simple example steps. -->
 3. Create .env file with the following 2 environmental variables:
    ```sh
    SECRET_KEY=<YOUR_SECRET_KEY>
-   DATABASE_URI = postgresql:///soccer_proleagues
+   DATABASE_URI=<YOUR_DATABASE_URI> # For example: postgresql:///soccer_proleagues
    ```
 4. Install dependencies from requirements.txt
    ```sh
