@@ -142,12 +142,16 @@ To get a local copy up and running follow these simple example steps. -->
 <!-- This is an example of how to list things you need to use the software and how to install them. -->
 
 ### Installation
+1. Clone the repository
+```sh
+   git clone https://github.com/jhellst/Soccer-ProLeagues.git
+   ```
 
 #### Backend:
 
-1. Clone the repository
+1. cd into backend folder
 ```sh
-   git clone https://github.com/jhellst/Soccer-ProLeagues-Backend.git
+   cd soccer-proleagues-backend
    ```
 2. Instantiate virtual environment
 3. Create .env file with the following 2 environmental variables:
@@ -162,21 +166,20 @@ To get a local copy up and running follow these simple example steps. -->
 5. Download and install PostgreSQL (if not already installed)
     - [Download PostgreSQL](https://www.postgresql.org/download/)
 
-
 6. Run seed file to create db tables and populate database with latest teams, leagues, and statistics.
    ```sh
    python3 seed.py
    ```
-7. Run backend server via Flask
+7. Run backend server in terminal via Flask
    ```sh
    flask run -p 5001
    ```
 
 #### Frontend:
 
-1. Clone the repository
+1. cd into frontend folder
 ```sh
-   git clone https://github.com/jhellst/Soccer-ProLeagues-Frontend.git
+   cd soccer-proleagues-backend
    ```
 2. Install NPM packages
    ```sh
