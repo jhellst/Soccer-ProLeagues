@@ -13,6 +13,7 @@
   /* padding: 20px; */
   background-color: #282c34;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding-bottom: 2%;
 }
 
 .TeamCardListInfo {
@@ -32,8 +33,8 @@
 }
 
 .TeamCardListInfo > div {
-  margin-top: 15px;
-  margin-bottom: 15px;
+  margin-top: 1%;
+  margin-bottom: 1%;
   max-width: 500px;
   justify-content: center;
 }
@@ -190,4 +191,26 @@ tr:nth-child(odd) {
 
 tr:hover {
   background-color: rgb(141, 153, 170);
+}
+
+.pageButtons {
+  width: 200px;
+  position: relative;
+  top: -17.7px;
+  left: 83.3%;
+  font-size: 18px;
+}
+
+.singleButton {
+  display: flex;
+}
+
+button {
+  font-size: small;
+  font-weight: bold;
+  width: 200px;
+  height: 40px;
+  /* margin: 1% 1% 2.5% 1%; */
+  right: 2%;
+  top: 2%;
 }

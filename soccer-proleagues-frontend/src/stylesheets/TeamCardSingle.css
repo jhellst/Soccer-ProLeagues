@@ -10,7 +10,7 @@ html{
   background-color: #000000;
 } */
 
-.TeamCard{
+.TeamCardSingle{
 	/* display: flex;
 	flex-direction: column; */
 	width: 80%;
@@ -27,7 +27,7 @@ html{
 	background-color: rgb(116, 132, 146);
 }
 
-.TeamCard-row img {
+.TeamCardSingle-row img {
   max-width: 100%;
 	height: 100px;
   max-height: 80px; /* Adjust the height as needed */
@@ -35,27 +35,27 @@ html{
   margin-bottom: 10px;
 }
 
-.TeamCard-Link{
+.TeamCardSingle-Link{
 	display: flex;
 	flex-direction: column;
 }
 
-.TeamCard-data table{
+.TeamCardSingle-data table{
 	margin: 30px auto;
 	border-collapse: collapse;
 }
 
-.TeamCard-data{
+.TeamCardSingle-data{
 	margin: 0px 0% 30px 0%;
 }
 
-.TeamCardCheckbox{
+.TeamCardSingleCheckbox{
 	position: top;
 	max-height: 10%;
 	padding-right: 1%;
 }
 
-.TeamCardInfo{
+.TeamCardSingleInfo{
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -67,14 +67,14 @@ html{
 
 .TeamCrest {
 	padding-top: 2%;
-	/* padding-bottom: 2%; */
+	padding-bottom: 2%;
 }
 
-.TeamCardListInfo {
+.TeamCardSingleListInfo {
 	display: flex;
 	flex-direction: column;
 }
 
-.TeamCardNews {
+.TeamCardSingledNews {
 	margin-bottom: 5%;
 }
