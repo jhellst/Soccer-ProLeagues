@@ -1,32 +1,40 @@
 import React, { useState } from 'react';
 import { FaCheckCircle, FaRegCircle } from 'react-icons/fa'; // Import check circle icons
-import './stylesheets/CheckCircle.css';
+import './stylesheets/CheckCircleLeagues.css';
 
-function CheckCircleToggleLeagues({ user_id, league_id, addLeagueToFollowList, addLeagueToUnfollowList, isFollowedByUser }) {
+function CheckCircleToggleLeagues({ user_id, league_id, isFollowedByUser, followLeague, unfollowLeague, isUserList }) {
   const [isChecked, setIsChecked] = useState(isFollowedByUser);
 
   let visibility = "visible";
   if (user_id && user_id !== "" && user_id !== undefined && user_id !== null) {
     visibility = 'visible';
   } else {
-    visibility = 'hidden'
+    visibility = 'hidden';
   }
 
   const toggleCheckOn = () => {
-    addLeagueToFollowList(user_id, league_id);
-    setIsChecked(prevState => !prevState);
+    if (isUserList == "True") {
+      followLeague(user_id, league_id);
+    } else {
+      setIsChecked(prevState => !prevState);
+      followLeague(user_id, league_id);
+    }
   };
 
   const toggleCheckOff = () => {
-    addLeagueToUnfollowList(user_id, league_id);
-    setIsChecked(prevState => !prevState);
+    if (isUserList == "True") {
+      unfollowLeague(user_id, league_id);
+    } else {
+      setIsChecked(prevState => !prevState);
+      unfollowLeague(user_id, league_id);
+    }
   };
 
   return (
 
-    <div className="checkCircleContainer">
-      <div className="checkCircle">
-        {isChecked ? (
+    <div className="checkCircleLeaguesContainer">
+      <div className="checkCircleLeagues">
+        {(isUserList == "True" || isChecked) ? (
           <FaCheckCircle visibility={visibility} onClick={toggleCheckOff} className='circleIsChecked' />
         ) : (
           <FaRegCircle visibility={visibility} onClick={toggleCheckOn} className='circleIsNotChecked' />

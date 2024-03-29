@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { FaCheckCircle, FaRegCircle } from 'react-icons/fa'; // Import check circle icons
 import './stylesheets/CheckCircle.css';
 
-function CheckCircleToggle({ user_id, team_id, addTeamToFollowList, addTeamToUnfollowList, isFollowedByUser }) {
+function CheckCircleToggle({ user_id, team_id, isFollowedByUser, followTeam, unfollowTeam }) {
   const [isChecked, setIsChecked] = useState(isFollowedByUser);
 
   let visibility = "visible";
@@ -13,12 +13,12 @@ function CheckCircleToggle({ user_id, team_id, addTeamToFollowList, addTeamToUnf
   }
 
   const toggleCheckOn = () => {
-    addTeamToFollowList(user_id, team_id);
+    followTeam(user_id, team_id);
     setIsChecked(prevState => !prevState);
   };
 
   const toggleCheckOff = () => {
-    addTeamToUnfollowList(user_id, team_id);
+    unfollowTeam(user_id, team_id);
     setIsChecked(prevState => !prevState);
   };
 
