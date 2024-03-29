@@ -1,8 +1,15 @@
 .LeagueListRow {
   color: #e5e7eb;
+  align-content: center;
 }
 
 .LeagueTable-Column-CheckCircle {
-  width: 4%;
-  padding-right: 2%;
+  padding-right: 1.5%;
+  /* align-content: center;
+  justify-content: center; */
+}
+
+.LeagueListRow > .removeButtonLeague{
+  bottom: 4px;
+  /* justify-content: center; */
 }

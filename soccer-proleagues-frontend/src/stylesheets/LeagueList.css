@@ -27,6 +27,9 @@ th{
   border-collapse: collapse;
   color: #e5e7eb;
   align-items: center;
+  border: 2px solid #000;
+  border-radius: 10px;
+  margin: 20px;
 }
 
 .LeagueList > table > thead > tr{
@@ -42,7 +45,7 @@ table {margin: 2%}
 .LeagueListTable {
   width: 90%;
   border-collapse: collapse;
-  /* margin: 5%; */
+  margin: 3%;
   /* overflow: hidden; */
   /* border-radius: 8px; */
   /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
@@ -85,3 +88,20 @@ tr:hover {
   width: 4%;
 }
 
+.pageButtonsLeague {
+  width: 200px;
+  position: relative;
+  top: 10%;
+  left: 38.5%;
+  font-size: 18px;
+}
+
+.pageButtonsLeague > button, .pageButtonsLeague > div {
+  font-size: small;
+  font-weight: bold;
+  width: 200px;
+  height: 40px;
+  margin: 1% 1% 2.5% 1%;
+  right: 2%;
+  top: 2%;
+}

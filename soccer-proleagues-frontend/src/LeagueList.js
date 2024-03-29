@@ -5,7 +5,7 @@ import LeagueListRow from "./LeagueListRow";
 // import TeamsAndLeaguesContext from "./Contexts";
 
 
-function LeagueList({ user, leagues, title, followedLeagueIds, handleSubmitFollowedLeagues }) {
+function LeagueList({ user, leagues, title, followedLeagueIds, handleSubmitFollowedLeagues, followLeague, unfollowLeague, isUserList }) {
   // const [isLoaded, setIsLoaded] = useState(false);
   const [leaguesToFollow, setLeaguesToFollow] = useState({});
   const [leaguesToUnfollow, setLeaguesToUnfollow] = useState({});
@@ -43,51 +43,52 @@ function LeagueList({ user, leagues, title, followedLeagueIds, handleSubmitFollo
     }
   }
 
-  console.log("leagues@LeagueList", leagues, "USER", user);
-
   return (
 
-    <div className="LeagueList">
+    <>
+      <span className="pageButtonsLeague">
 
-      <h1 className="LeagueList-title">{title}</h1>
-      <table className="LeagueListTable">
-        <thead>
-          <tr>
-            <th className="LeagueTable-Column"></th>
-            <th scope="col" className="LeagueTable-Column">League</th>
-            <th scope="col" className="LeagueTable-Column">Country / Region</th>
-            {/* <th scope="col" className="LeagueTable-Column">League Data Last Updated:</th> */}
-            {user && <th scope="col" className="LeagueTable-Column-CheckCircle"></th>}
-            {/* <th scope="col" class="LeagueTable-Column">Country / Region</th> */}
-          </tr>
-
-        </thead>
-
-        <tbody>
-
-          {leagues && leagues.map((league, idx) => (
-            <LeagueListRow key={idx} user_id={user?.user_id} leagueId={league.league_id}
-              leagueName={league.league_name} leagueUrl={league.league_url}
-              lastUpdatedDate={league.last_updated_date} addLeagueToFollowList={addLeagueToFollowList} addLeagueToUnfollowList={addLeagueToUnfollowList} isFollowedByUser={(league && league.league_id && followedLeagueIds && followedLeagueIds.has(league.league_id)) ? (true) : (false)} />
-          ))}
-
-        </tbody>
+        <button onClick={() => {
+          navigate(-1);
+        }
+        }>Back</button>
+      </span>
 
 
-      </table>
 
-      <button onClick={() => {
-        handleSubmitFollowedLeagues(leaguesToFollow, leaguesToUnfollow);
-        navigate("/");
-      }
-      }>Submit Follows/Unfollows</button>
+      <div className="LeagueList">
 
-      <button onClick={() => {
-        navigate(-1);
-      }
-      }>Back</button>
+        <h1 className="LeagueList-title">{title}</h1>
+        <table className="LeagueListTable">
+          <thead>
+            <tr>
+              <th className="LeagueTable-Column"></th>
+              <th scope="col" className="LeagueTable-Column">League</th>
+              <th scope="col" className="LeagueTable-Column">Country / Region</th>
+              {/* <th scope="col" className="LeagueTable-Column">League Data Last Updated:</th> */}
+              {user && <th scope="col" className="LeagueTable-Column-CheckCircle"></th>}
+              {/* <th scope="col" class="LeagueTable-Column">Country / Region</th> */}
+            </tr>
 
-    </div>
+          </thead>
+
+          <tbody>
+
+            {leagues && leagues.map((league, idx) => (
+              <LeagueListRow key={idx} user_id={user?.user_id} leagueId={league.league_id}
+                leagueName={league.league_name} leagueUrl={league.league_url}
+                lastUpdatedDate={league.last_updated_date} addLeagueToFollowList={addLeagueToFollowList} addLeagueToUnfollowList={addLeagueToUnfollowList} followLeague={followLeague} unfollowLeague={unfollowLeague} isUserList={isUserList} isFollowedByUser={((isUserList == "True") || (league && league.league_id && followedLeagueIds && followedLeagueIds.has(league.league_id))) ? (true) : (false)} />
+            ))}
+
+          </tbody>
+
+
+        </table>
+
+      </div>
+
+    </>
+
 
   );
 }

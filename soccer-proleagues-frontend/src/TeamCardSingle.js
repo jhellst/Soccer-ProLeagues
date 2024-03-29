@@ -7,22 +7,22 @@ function TeamCardSingle({ teamId, teamName, teamNameAbbrev, teamCrest, teamUrl, 
 
   return (
 
-    <div className="TeamCard">
-        <div className="TeamCardCheckbox">
+    <div className="TeamCardSingle">
+        {/* <div className="TeamCardSingleCheckbox">
           <CheckCircle user_id={user_id} team_id={teamId} submitFollowedTeams={submitFollowedTeams} isFollowedByUser={isFollowedByUser} addTeamToFollowList={addTeamToFollowList} addTeamToUnfollowList={addTeamToUnfollowList}/>
-        </div>
+        </div> */}
 
-      <div className="TeamCardInfo">
+      <div className="TeamCardSingleInfo">
 
-      <Link className="TeamCard-Link" to={"/teams/" + teamId}>
+      <Link className="TeamCardSingle-Link" to={"/teams/" + teamId}>
         <div className="TeamName">{teamName}</div>
         <div className="TeamCrest">
           <img src={teamCrest} alt={teamName + " Team Crest"} />
         </div>
       </Link>
 
-      <Link className="TeamCardNews" to={teamUrl}>
-        <div className="TeamCardNewsDiv">{teamName} Team News</div>
+      <Link className="TeamCardSingleNews" to={teamUrl}>
+        <div className="TeamCardSingleNewsDiv">{teamName} Team News</div>
       </Link>
       </div>
 

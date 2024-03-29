@@ -177,6 +177,7 @@ function App() {
     updateToken(null);
     setFollowedLeagues([]);
     setFollowedTeams([]);
+    setFollowedTeamIds([]);
   }
 
   /** Retrieves league table of specified league. */
@@ -278,6 +279,30 @@ function App() {
     console.log(newFollowedLeagues);
   }
 
+  async function followLeague(user_id, league_id) {
+    await SoccerLeaguesApi.followLeague(user_id, league_id);
+    const followedLeagues = await getFollowedLeagues(user_id);
+    setFollowedLeagues(followedLeagues);
+  }
+
+  async function unfollowLeague(user_id, league_id) {
+    await SoccerLeaguesApi.unfollowLeague(user_id, league_id);
+    const followedLeagues = await getFollowedLeagues(user_id);
+    setFollowedLeagues(followedLeagues);
+  }
+
+  async function followTeam(user_id, team_id) {
+    await SoccerLeaguesApi.followTeam(user_id, team_id);
+    const followedTeams = await getFollowedTeams(user_id);
+    setFollowedTeams(followedTeams);
+  }
+
+  async function unfollowTeam(user_id, team_id) {
+    await SoccerLeaguesApi.unfollowTeam(user_id, team_id);
+    const followedTeams = await getFollowedTeams(user_id);
+    setFollowedTeams(followedTeams);
+  }
+
 
   return (
     <div className="App">
@@ -287,7 +312,7 @@ function App() {
           <TeamsAndLeaguesContext.Provider value={{ teams: teams, leagues: leagues }}>
             <BrowserRouter>
               <Nav user={user} logout={logout} />
-              <RoutesList user={user} login={login} signup={signup} getTeamDetail={getTeamDetail} getLeagueTable={getLeagueTable} leagues={leagues} teams={teams} followedLeagues={followedLeagues} followedTeams={followedTeams} followedLeagueIds={followedLeagueIds} handleSubmitFollowedLeagues={handleSubmitFollowedLeagues} followedTeamIds={followedTeamIds} handleSubmitFollowedTeams={handleSubmitFollowedTeams} />
+              <RoutesList user={user} login={login} signup={signup} getTeamDetail={getTeamDetail} getLeagueTable={getLeagueTable} leagues={leagues} teams={teams} followedLeagues={followedLeagues} followedTeams={followedTeams} followedLeagueIds={followedLeagueIds} handleSubmitFollowedLeagues={handleSubmitFollowedLeagues} followedTeamIds={followedTeamIds} handleSubmitFollowedTeams={handleSubmitFollowedTeams} followLeague={followLeague} unfollowLeague={unfollowLeague} unfollowTeam={unfollowTeam} followTeam={followTeam} />
             </BrowserRouter>
           </TeamsAndLeaguesContext.Provider>
         </userContext.Provider>

@@ -13,17 +13,17 @@ import TeamCardList from './TeamCardList';
  *    companies/jobs/profile if user is logged in, otherwise will
  *    show only login and signup buttons, and will not allow other routing.
  */
-function RoutesList({ user, login, signup, getTeamDetail, leagues, teams, followedLeagues, followedTeams, getLeagueTable, followLeague, followedLeagueIds, handleSubmitFollowedLeagues, followedTeamIds, handleSubmitFollowedTeams, addTeamToFollowList }) {
+function RoutesList({ user, login, signup, getTeamDetail, leagues, teams, followedLeagues, followedTeams, getLeagueTable, followedLeagueIds, handleSubmitFollowedLeagues, followedTeamIds, handleSubmitFollowedTeams, addTeamToFollowList, followLeague, unfollowLeague, followTeam, unfollowTeam }) {
 
   return (
     <>
       {user ?
         <Routes>
           <Route path="/" element={<Homepage user={user} />} />
-          <Route path="/users/:user_id/leagues" element={<LeagueList user={user} leagues={followedLeagues} followedLeagueIds={followedLeagueIds} handleSubmitFollowedLeagues={handleSubmitFollowedLeagues} title={user.username + "'s Followed Leagues"}/>} />
-          <Route path="/users/:user_id/teams" element={<TeamCardList user={user} teams={followedTeams} followedTeamIds={followedTeamIds} handleSubmitFollowedTeams={handleSubmitFollowedTeams} addTeamToFollowList={addTeamToFollowList} title={user.username + "'s Followed Teams"}/>} />
-          <Route path="/teams" element={<TeamCardList teams={teams} user={user} title={"All Teams"} followedTeamIds={followedTeamIds} handleSubmitFollowedTeams={handleSubmitFollowedTeams} addTeamToFollowList={addTeamToFollowList}/>} />
-          <Route path="/leagues" element={<LeagueList user={user} leagues={leagues} followedLeagueIds={followedLeagueIds} handleSubmitFollowedLeagues={handleSubmitFollowedLeagues} title={"All Leagues"}/>} />
+          <Route path="/users/:user_id/leagues" element={<LeagueList user={user} leagues={followedLeagues} followedLeagueIds={followedLeagueIds} handleSubmitFollowedLeagues={handleSubmitFollowedLeagues} followLeague={followLeague} unfollowLeague={unfollowLeague} isUserList="True" title={user.username + "'s Followed Leagues"}/>} />
+          <Route path="/users/:user_id/teams" element={<TeamCardList user={user} teams={followedTeams} followedTeamIds={followedTeamIds} handleSubmitFollowedTeams={handleSubmitFollowedTeams} addTeamToFollowList={addTeamToFollowList} followTeam={followTeam} unfollowTeam={unfollowTeam} isUserList="True" title={user.username + "'s Followed Teams"}/>} />
+          <Route path="/teams" element={<TeamCardList teams={teams} user={user} title={"All Teams"} followedTeamIds={followedTeamIds} handleSubmitFollowedTeams={handleSubmitFollowedTeams} addTeamToFollowList={addTeamToFollowList} followTeam={followTeam} unfollowTeam={unfollowTeam} isUserList="False" />} />
+          <Route path="/leagues" element={<LeagueList user={user} leagues={leagues} followedLeagueIds={followedLeagueIds} handleSubmitFollowedLeagues={handleSubmitFollowedLeagues} followLeague={followLeague} unfollowLeague={unfollowLeague} isUserList="False" title={"All Leagues"}/>} />
 
           <Route path="/leagues/:league_id" element={<LeagueTable getLeagueTable={getLeagueTable}/>} />
           <Route path="/teams/:team_id" element={<SingleTeam user={user} getTeamDetail={getTeamDetail} followedLeagueIds={followedLeagueIds} followedTeamIds={followedTeamIds}/>} />
