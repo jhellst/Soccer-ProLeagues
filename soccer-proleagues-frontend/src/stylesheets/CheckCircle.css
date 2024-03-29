@@ -1,12 +1,9 @@
-/* .checkCircleContainer {
-  position: relative;
-  float: left;
-} */
+
 
 .checkCircleContainer {
-  padding: 2%;
-  position: relative;
-  right: -46.5%;
+  /* padding: 2%; */
+  /* right: -48.5%; */
+  /* top: 5%; */
 }
 
 .circleIsChecked {
@@ -17,4 +14,8 @@
 .circleIsNotChecked {
   color: 'gray';
   cursor: 'pointer';
+}
+
+.LeagueTable-Column-CheckCircle-Team {
+
 }
