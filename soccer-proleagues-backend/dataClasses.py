@@ -6,6 +6,8 @@ class LeagueInfo:
     """Class to hold info for a pro soccer league."""
     league_id: int
     league_name: str
+    league_country: str
+    league_description: str
     league_url: str
     last_updated_date: datetime.datetime
 

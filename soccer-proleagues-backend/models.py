@@ -149,6 +149,18 @@ class League(db.Model):
         db.String,
         nullable=False
     )
+    # League Region/Country
+    league_country = db.Column(
+        db.String,
+        nullable=True,
+        default="N/A",
+    )
+    # League Description -> Description of League's division and/or region.
+    league_description = db.Column(
+        db.String,
+        nullable=True,
+        default="",
+    )
     # League URL
     league_url = db.Column(
         db.String,

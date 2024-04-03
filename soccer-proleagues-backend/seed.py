@@ -17,21 +17,21 @@ user_2 = User(username="b", password=hashed_pwd_2)
 db.session.add_all([user_1, user_2])
 
 # Add Sample League(s)
-epl = League(league_name='English Premier League',
+epl = League(league_name='English Premier League', league_country='England', league_description='English First Division Professional Soccer League',
              league_url="https://www.theguardian.com/football/premierleague/table")
-bundesliga = League(league_name='Bundesliga',
+bundesliga = League(league_name='Bundesliga', league_country='Germany', league_description='German First Division Professional Soccer League',
                     league_url="https://www.theguardian.com/football/bundesligafootball/table")
-serie_a = League(league_name='Serie A',
+serie_a = League(league_name='Serie A', league_country='Italy', league_description='Italian First Division Professional Soccer League',
                  league_url="https://www.theguardian.com/football/serieafootball/table")
-la_liga = League(league_name='La Liga',
+la_liga = League(league_name='La Liga', league_country='Spain', league_description='Spanish First Division Professional Soccer League',
                  league_url="https://www.theguardian.com/football/laligafootball/table")
-ligue_1 = League(league_name='Ligue 1',
+ligue_1 = League(league_name='Ligue 1', league_country='France', league_description='French First Division Professional Soccer League',
                  league_url="https://www.theguardian.com/football/ligue1football/table")
-scottish_premiership = League(league_name='Scottish Premiership',
+scottish_premiership = League(league_name='Scottish Premiership', league_country='Scotland', league_description='Scottish First Division Professional Soccer League',
                               league_url="https://www.theguardian.com/football/scottish-premiership/table")
-english_championship = League(league_name='English Championship',
+english_championship = League(league_name='English Championship', league_country='England', league_description='English Second Division Professional Soccer League',
                               league_url="https://www.theguardian.com/football/championship/table")
-english_league_one = League(league_name='English League One',
+english_league_one = League(league_name='English League One', league_country='England', league_description='English Third Division Professional Soccer League',
                             league_url="https://www.theguardian.com/football/leagueonefootball/table")
 # english_league_two = League(league_name='English League Two',
 #                             league_url="https://www.theguardian.com/football/leaguetwofootball/table")

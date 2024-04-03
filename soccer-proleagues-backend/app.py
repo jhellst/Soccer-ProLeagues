@@ -170,9 +170,9 @@ def get_all_leagues():
     """Returns name + link for each league."""
 
     all_leagues = db.session.query(
-        League.id, League.league_name, League.league_url, League.last_updated_date)
+        League.id, League.league_name, League.league_country, League.league_description, League.league_url, League.last_updated_date)
 
-    leagues = [LeagueInfo(league.id, league.league_name, league.league_url,
+    leagues = [LeagueInfo(league.id, league.league_name, league.league_country, league.league_description, league.league_url,
                           league.last_updated_date) for league in all_leagues]
     return leagues
 
@@ -299,6 +299,8 @@ def get_followed_leagues(user_id):
     print("followed_leagues", followed_leagues)
 
     leagues = [{"league_name": league.league_name,
+                "league_country": league.league_country,
+                "league_description": league.league_description,
                 "league_url": league.league_url,
                 "league_id": league.id,
                 "last_updated_date": league.last_updated_date,
