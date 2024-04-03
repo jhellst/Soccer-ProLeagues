@@ -1,4 +1,4 @@
-.LeagueListRow {
+.SimpleLeagueListRow {
   color: #e5e7eb;
   align-content: center;
 }
@@ -9,7 +9,7 @@
   justify-content: center; */
 }
 
-.LeagueListRow > a {
+.SimpleLeagueListRow > a {
   justify-content: center;
   /* padding-top: 10px; */
   height: 0;
@@ -19,10 +19,4 @@
 .leagueName {
   align-items: center;
   top: 2%;
-}
-
-
-.LeagueListRow > .removeButtonLeague{
-  /* bottom: 4px; */
-  /* justify-content: center; */
 }

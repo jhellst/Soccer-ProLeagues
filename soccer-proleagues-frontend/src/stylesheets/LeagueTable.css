@@ -4,6 +4,7 @@ table {margin: 2%}
   border-collapse: collapse;
   color: #e5e7eb;
   border-radius: 100px;
+  border: 3px solid black;
   /* bordrgb(145, 145, 146)us: 8%; */
 }
 
@@ -23,7 +24,7 @@ table {margin: 2%}
 
 .LeagueTable th{
   /* color: rgba(156, 163, 175, var(--tw-text-opacity)); */
-  color: #808080;
+  color: white;
 }
 
 /* Basic Table Styling with Rounded Edges */

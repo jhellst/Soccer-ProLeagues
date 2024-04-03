@@ -36,7 +36,7 @@ tr {
 .LeagueTableRow td{
   /* background-color: rgba(17, 24, 39, var(--tw-bg-opacity)); */
   background-color: rgba(17, 24, 39, var(--tw-bg-opacity));
-  color: #808080;
+  color: #white;
   font-weight: bold;
   /* color: rgba(17, 24, 39, var(--tw-bg-opacity)); */
 }
