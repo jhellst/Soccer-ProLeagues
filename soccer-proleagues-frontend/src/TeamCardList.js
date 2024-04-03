@@ -21,11 +21,21 @@ function TeamCardList({ user, teams, title, followedTeamIds, followTeam, unfollo
           }>Back</button>
         </div>
       </div>
+
     <div className="TeamCardList">
       {/* {!isLoaded && <p>League Table Loading...</p>} */}
 
+      <div class="homepageSummary">
+          <div>
+            <h1 className="LeagueList-title">{title}</h1>
 
-      <h1>{title}</h1>
+            <p className="style-5">See below for a list of all Pro Soccer Teams tracked in our records.</p>
+            {(isUserList === "True") ?
+              <p className="style-5">Click the remove button (X) to remove that team from your follow list.</p> :
+              <p className="style-5">Toggle the checkboxes to follow and unfollow teams.</p>
+            }
+          </div>
+        </div>
 
       <div className="TeamCardListInfo">
 

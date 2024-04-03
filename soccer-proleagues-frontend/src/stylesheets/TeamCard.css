@@ -94,9 +94,9 @@ html{
 
 .TeamCardRemoveButton {
 	position: relative;
-	right: 0.5%;
+	right: 0.2%;
 	max-height: 10%;
-	top: -4%;
+	top: -7%;
 }
 
 .TeamCardCheckbox {
