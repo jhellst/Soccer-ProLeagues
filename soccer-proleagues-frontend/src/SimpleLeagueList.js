@@ -19,9 +19,9 @@ function SimpleLeagueList({ user, leagues, title }) {
       <table className="LeagueListTable">
         <thead>
           <tr>
-            <th className="LeagueTable-Column"></th>
-            <th scope="col" className="LeagueTable-Column">League</th>
-            {/* <th scope="col" className="LeagueTable-Column">Country / Region</th> */}
+            <th className="LeagueList-Column"></th>
+            <th scope="col" className="LeagueList-Column">League</th>
+            <th scope="col" className="LeagueList-Column">Country / Region</th>
           </tr>
 
         </thead>

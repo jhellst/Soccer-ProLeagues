@@ -7,41 +7,12 @@ import LeagueListRow from "./LeagueListRow";
 
 function LeagueList({ user, leagues, title, followedLeagueIds, handleSubmitFollowedLeagues, followLeague, unfollowLeague, isUserList }) {
   // const [isLoaded, setIsLoaded] = useState(false);
-  const [leaguesToFollow, setLeaguesToFollow] = useState({});
-  const [leaguesToUnfollow, setLeaguesToUnfollow] = useState({});
+  // const [leaguesToFollow, setLeaguesToFollow] = useState({});
+  // const [leaguesToUnfollow, setLeaguesToUnfollow] = useState({});
   const navigate = useNavigate();
 
-  /** Adds a league to the user's list of new follows. User must submit to finalize new follows. */
-  async function addLeagueToFollowList(userId, leagueId) {
-    if (userId && userId !== undefined && userId !== null && leagueId && leagueId !== undefined && leagueId !== null) {
+  console.log("League List!", leagues);
 
-      leaguesToFollow[(userId, leagueId)] = true;
-      console.log("leaguesToFollow!", leaguesToFollow);
-
-      if ((userId, leagueId) in leaguesToUnfollow) {
-        leaguesToUnfollow[(userId, leagueId)] = false;
-        setLeaguesToUnfollow(leaguesToUnfollow);
-      }
-
-      setLeaguesToFollow(leaguesToFollow);
-    }
-  }
-
-  /** Adds a team to user's list of leagues to unfollow. User must submit to finalize unfollows. */
-  async function addLeagueToUnfollowList(userId, leagueId) {
-    if (userId && userId !== undefined && userId !== null && leagueId && leagueId !== undefined && leagueId !== null) {
-
-      leaguesToUnfollow[(userId, leagueId)] = true;
-      console.log("leaguesToUnfollow!", leaguesToUnfollow);
-
-      if ((userId, leagueId) in leaguesToFollow) {
-        leaguesToFollow[(userId, leagueId)] = false;
-        setLeaguesToFollow(leaguesToFollow);
-      }
-
-      setLeaguesToUnfollow(leaguesToUnfollow);
-    }
-  }
 
   return (
 
@@ -55,16 +26,28 @@ function LeagueList({ user, leagues, title, followedLeagueIds, handleSubmitFollo
       </span>
 
 
-
       <div className="LeagueList">
 
-        <h1 className="LeagueList-title">{title}</h1>
+        <div class="homepageSummary">
+          <div>
+            <h1 className="LeagueList-title">{title}</h1>
+
+            <p className="style-5">See below for a list of all Pro Soccer Leagues tracked in our records.</p>
+            {(isUserList === "True") ?
+              <p className="style-5">Click the remove button (X) to remove that league from your follow list.</p> :
+              <p className="style-5">Toggle the checkboxes to follow and unfollow leagues.</p>
+            }
+              <p className="style-5">Click on a League entry to view its detailed league table.</p>
+          </div>
+        </div>
+
+        {/* <h1 className="LeagueList-title">{title}</h1> */}
         <table className="LeagueListTable">
           <thead>
             <tr>
               <th className="LeagueTable-Column"></th>
               <th scope="col" className="LeagueTable-Column">League</th>
-              <th scope="col" className="LeagueTable-Column">Country / Region</th>
+              <th scope="col" className="LeagueTable-Column">Description</th>
               {/* <th scope="col" className="LeagueTable-Column">League Data Last Updated:</th> */}
               {user && <th scope="col" className="LeagueTable-Column-CheckCircle"></th>}
               {/* <th scope="col" class="LeagueTable-Column">Country / Region</th> */}
@@ -76,8 +59,8 @@ function LeagueList({ user, leagues, title, followedLeagueIds, handleSubmitFollo
 
             {leagues && leagues.map((league, idx) => (
               <LeagueListRow key={idx} user_id={user?.user_id} leagueId={league.league_id}
-                leagueName={league.league_name} leagueUrl={league.league_url}
-                lastUpdatedDate={league.last_updated_date} addLeagueToFollowList={addLeagueToFollowList} addLeagueToUnfollowList={addLeagueToUnfollowList} followLeague={followLeague} unfollowLeague={unfollowLeague} isUserList={isUserList} isFollowedByUser={((isUserList == "True") || (league && league.league_id && followedLeagueIds && followedLeagueIds.has(league.league_id))) ? (true) : (false)} />
+                leagueName={league.league_name} leagueUrl={league.league_url} leagueCountry={league.league_country} leagueDescription={league.league_description}
+                lastUpdatedDate={league.last_updated_date} followLeague={followLeague} unfollowLeague={unfollowLeague} isUserList={isUserList} isFollowedByUser={((isUserList == "True") || (league && league.league_id && followedLeagueIds && followedLeagueIds.has(league.league_id))) ? (true) : (false)} />
             ))}
 
           </tbody>

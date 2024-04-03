@@ -34,27 +34,35 @@ function LeagueTable({ getLeagueTable }) {
 
     return (
 
-      <div className="LeagueTable">
-        <h1 className="LeagueTable-title">{curLeague[0]?.league_name}</h1>
+      <div className="LeagueTableContainer">
 
-      <table className="LeagueTable">
-        <thead>
-          <tr>
-            <th scope="col" className="LeagueTable-Column"></th>
-            <th scope="col" className="LeagueTable-Column">Team</th>
-            <th scope="col" className="LeagueTable-Column">MP</th>
-            <th scope="col" className="LeagueTable-Column">W</th>
-            <th scope="col" className="LeagueTable-Column">D</th>
-            <th scope="col" className="LeagueTable-Column">L</th>
-            <th scope="col" className="LeagueTable-Column">GF</th>
-            <th scope="col" className="LeagueTable-Column">GA</th>
-            <th scope="col" className="LeagueTable-Column">GD</th>
-            <th scope="col" className="LeagueTable-Column">Pts</th>
-            {/* <th scope="col" className="LeagueTable-Column">Last 5</th> */}
-          </tr>
-        </thead>
+        <div class="homepageSummary">
+          <div>
+            <h1 className="LeagueList-title">{curLeague[0]?.league_name}</h1>
+            <p className="style-5">See below for the complete league table for the {curLeague[0]?.league_name}.</p>
+            <p className="style-5">Users can explore statistics by team and click on </p>
+          </div>
+        </div>
+        {/* <h1 className="LeagueTable-title">{curLeague[0]?.league_name}</h1> */}
 
-        {leagueTable.map((team, idx) => (
+        <table className="LeagueTable">
+          <thead>
+            <tr>
+              <th scope="col" className="LeagueTable-Column"></th>
+              <th scope="col" className="LeagueTable-Column">Team</th>
+              <th scope="col" className="LeagueTable-Column">MP</th>
+              <th scope="col" className="LeagueTable-Column">W</th>
+              <th scope="col" className="LeagueTable-Column">D</th>
+              <th scope="col" className="LeagueTable-Column">L</th>
+              <th scope="col" className="LeagueTable-Column">GF</th>
+              <th scope="col" className="LeagueTable-Column">GA</th>
+              <th scope="col" className="LeagueTable-Column">GD</th>
+              <th scope="col" className="LeagueTable-Column">Pts</th>
+              {/* <th scope="col" className="LeagueTable-Column">Last 5</th> */}
+            </tr>
+          </thead>
+
+          {leagueTable.map((team, idx) => (
             <LeagueTableRow key={idx} teamId={team.team_id} teamName={team.team_name} teamNameAbbrev={team.team_name_abbrev}
               teamCrest={team.team_crest} teamHyperlink={team.team_hyperlink} currentStanding={team.current_standing} wins={team.wins}
               draws={team.draws} losses={team.losses} gamesPlayed={team.games_played}
@@ -62,7 +70,7 @@ function LeagueTable({ getLeagueTable }) {
               goalDifferential={team.goal_differential} points={team.points} />
           ))}
 
-      </table>
+        </table>
       </div>
 
 
