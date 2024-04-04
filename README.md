@@ -15,16 +15,16 @@
 <!-- [![MIT License][license-shield]][license-url] -->
 <!-- [![LinkedIn][linkedin-shield]][linkedin-url] -->
 
-
+# Soccer ProLeagues
 
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
   <a href="https://github.com/jhellst/Soccer-ProLeagues">
-    <img src="soccer-proleagues-frontend/src/images/logo.svg" alt="Logo" width="400" height="400">
+    <img src="soccer-proleagues-frontend/src/images/logo.svg" alt="Logo" width="250" height="250">
   </a>
 
-  <!-- <h3 align="center">Soccer ProLeagues</h3> -->
+  <!-- <h1 align="center">Soccer ProLeagues</h1> -->
 
   <p align="center">
     <!-- A web app that scrapes data from soccer league tables and renders them in a personalized homepage -->
