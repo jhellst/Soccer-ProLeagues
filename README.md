@@ -21,10 +21,10 @@
 <br />
 <div align="center">
   <a href="https://github.com/jhellst/Soccer-ProLeagues">
-    <img src="images/logo.svg" alt="Logo" width="80" height="80">
+    <img src="soccer-proleagues-frontend/src/images/logo.svg" alt="Logo" width="400" height="400">
   </a>
 
-  <h3 align="center">Soccer ProLeagues</h3>
+  <!-- <h3 align="center">Soccer ProLeagues</h3> -->
 
   <p align="center">
     <!-- A web app that scrapes data from soccer league tables and renders them in a personalized homepage -->
