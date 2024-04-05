@@ -1,85 +1,21 @@
-/* .removeButton {
-  border: none;
-  margin: 2px;
-  height: 30px;
-  width: 120px;
-  align-items: center;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  font-size: 12px;
-} */
 
-.removeButtonLeague {
-  border-radius: 50%;
+.removeButton {
   padding: 0.5em;
   width: 30px;
   height: 30px;
-  border: 2px solid black;
   color: black;
   position: relative;
-  transform: scale(0.7);
-  background-color: rgba(161, 163, 164, 0.47);
-  align-items: end;
+  transform: scale(0.6);
 }
 
 button {
   background-color: rgba(128, 128, 128, 0.468);
 }
 
-/* .removeButton > button {
-  background-color: rgba(128, 128, 128, 0.003);
-} */
-
-.removeButtonLeague:hover {
-  border: 2px solid white;
+.removeButton:hover {
+  /* border: 2px solid white; */
   background-color: rgba(27, 27, 27, 0.485);
   color: #ffffff;
-}
-
-.removeButtonLeague::before {
-  content: " ";
-  position: absolute;
-  display: block;
-  background-color: black;
-  width: 2px;
-  left: 12px;
-  top: 5px;
-  bottom: 5px;
-  transform: rotate(45deg);
-}
-.removeButtonLeague::after {
-  content: " ";
-  position: absolute;
-  display: block;
-  background-color: black;
-  height: 2px;
-  top: 12px;
-  left: 5px;
-  right: 5px;
-  transform: rotate(45deg);
-}
-
-.removeButtonLeague:hover::before {
-  content: " ";
-  position: absolute;
-  display: block;
-  background-color: white;
-  width: 2px;
-  left: 12px;
-  top: 5px;
-  bottom: 5px;
-  transform: rotate(45deg);
-}
-
-.removeButtonLeague:hover::after {
-  content: " ";
-  position: absolute;
-  display: block;
-  background-color: white;
-  height: 2px;
-  top: 12px;
-  left: 5px;
-  right: 5px;
-  transform: rotate(45deg);
+  /* color: 'gray';
+  cursor: 'pointer'; */
 }

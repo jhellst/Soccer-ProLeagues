@@ -13,7 +13,7 @@ html{
 .TeamCard{
 	/* display: flex;
 	flex-direction: column; */
-	width: 80%;
+	width: 320px;
 	max-width: 90%;
 	min-width: 20%;
 	height: 180px;
@@ -24,7 +24,10 @@ html{
 	align-content: center;
 	border: 2px solid #0000009c;
 	border-radius: 10px;
-	background-color: rgb(116, 132, 146);
+	/* background-color: rgb(116, 132, 146); */
+	background-color: #b9c4c9a0;
+	margin-left: 1%;
+	margin-right: 1%;
 }
 
 .TeamCard-row img {
@@ -103,4 +106,19 @@ html{
 	position: relative;
 	right: -89%;
 	top: -4%;
+}
+
+.pageButtonsSingleTeam {
+	display: flex;
+	flex-direction: row-reverse;
+	width: 100%;
+	padding-right: 2%;
+}
+
+.pageButtonsSingleTeam > button, .pageButtonsSingleTeam > div {
+	font-size: small;
+	font-weight: bold;
+	width: 200px;
+	height: 40px;
+	margin: 1% 1% 0% 1%;
 }

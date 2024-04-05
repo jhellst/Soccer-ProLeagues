@@ -1,27 +1,27 @@
 import { useContext, useState, useParams } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./stylesheets/LeagueList.css";
+import "./stylesheets/SimpleLeagueList.css";
 import SimpleLeagueListRow from "./SimpleLeagueListRow";
-// import TeamsAndLeaguesContext from "./Contexts";
 
 
 function SimpleLeagueList({ user, leagues, title }) {
   // const [isLoaded, setIsLoaded] = useState(false);
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   console.log("leagues@SimpleLeagueList", leagues, "USER", user);
 
   return (
 
-    <div className="LeagueList">
+    <div className="SimpleLeagueList">
 
-      <h1 className="LeagueList-title">{title}</h1>
-      <table className="LeagueListTable">
+      <h1 className="SimpleLeagueList-title">{title}</h1>
+      <table className="SimpleLeagueListTable">
         <thead>
           <tr>
-            <th className="LeagueList-Column"></th>
-            <th scope="col" className="LeagueList-Column">League</th>
-            <th scope="col" className="LeagueList-Column">Country / Region</th>
+            <th className="SimpleLeagueList-Column"></th>
+            <th scope="col" className="SimpleLeagueList-Column">League</th>
+            <th scope="col" className="SimpleLeagueList-Column">Country / Region</th>
           </tr>
 
         </thead>

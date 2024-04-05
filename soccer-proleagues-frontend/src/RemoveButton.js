@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import './stylesheets/RemoveButton.css';
+import { FaCheckCircle, FaRegCircle, FaTimesCircle } from 'react-icons/fa'; // Import check circle icons
+
 
 function RemoveButton({ listType, unfollowLeague, unfollowTeam, user_id, id }) {
 
@@ -12,7 +14,8 @@ function RemoveButton({ listType, unfollowLeague, unfollowTeam, user_id, id }) {
   };
 
 return (
-  <button className='removeButton' onClick={handleSubmitRemove}></button>
+  // <button className='removeButton' onClick={handleSubmitRemove}></button>
+  <FaTimesCircle className='removeButton' onClick={handleSubmitRemove}/>
 );
 }
 
