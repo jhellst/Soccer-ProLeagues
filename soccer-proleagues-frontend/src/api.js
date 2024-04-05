@@ -11,9 +11,9 @@ class SoccerLeaguesApi {
   static token = "";
 
   static async request(endpoint, data = {}, method = "GET") {
-    console.log("API REQUEST", endpoint, "data", data, "method", method);
+    // console.log("API REQUEST", endpoint, "data", data, "method", method);
     const url = new URL(`${BASE_URL}/${endpoint}`);
-    console.log("Request@", endpoint, SoccerLeaguesApi.token);
+    // console.log("Request@", endpoint, SoccerLeaguesApi.token);
     const headers = {
       authorization: `Bearer ${SoccerLeaguesApi.token}`,
       'content-type': 'application/json',

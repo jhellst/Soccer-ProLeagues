@@ -1,6 +1,7 @@
 
-.removeButton {
-  padding: 0.5em;
+.removeButtonLeague {
+  /* padding: 0.5em; */
+  margin-top: 30%;
   width: 30px;
   height: 30px;
   color: black;
@@ -12,10 +13,10 @@ button {
   background-color: rgba(128, 128, 128, 0.468);
 }
 
-.removeButton:hover {
+.removeButtonLeague:hover {
   /* border: 2px solid white; */
   background-color: rgba(27, 27, 27, 0.485);
   color: #ffffff;
-  /* color: 'gray';
-  cursor: 'pointer'; */
+  color: 'gray';
+  cursor: 'pointer';
 }

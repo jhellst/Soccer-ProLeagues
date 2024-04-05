@@ -24,7 +24,7 @@ function TeamCardList({ user, teams, title, followedTeamIds, followTeam, unfollo
       <div className="TeamCardList">
         {/* {!isLoaded && <p>League Table Loading...</p>} */}
 
-        <div class="homepageSummary">
+        <div className="homepageSummary">
           <div>
             <h1 className="LeagueList-title">{title}</h1>
 

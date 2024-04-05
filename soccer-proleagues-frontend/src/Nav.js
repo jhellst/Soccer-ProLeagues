@@ -8,7 +8,6 @@ import { NavLink, Link, useNavigate } from "react-router-dom";
  */
 function Nav({ user, logout }) {
   // console.log("USER", user, user.username, user.id);
-  console.log("USER", user);
 
   return (
     <nav className="NavBar">
