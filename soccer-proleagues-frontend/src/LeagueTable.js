@@ -3,7 +3,7 @@ import LeagueTableRow from "./LeagueTableRow";
 import TeamsAndLeaguesContext from "./Contexts";
 import LeagueList from "./LeagueList";
 import { useContext } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import "./stylesheets/LeagueTable.css";
 // import LeagueTableRow from "./LeagueTableRow";
 
@@ -18,6 +18,7 @@ function LeagueTable({ getLeagueTable }) {
   const teams = teamsAndLeaguesContext.teams;
   const leagues = teamsAndLeaguesContext.leagues;
 
+  const navigate = useNavigate();
   const curLeague = leagues.filter(league => league.league_id == leagueId);
 
 
@@ -36,11 +37,19 @@ function LeagueTable({ getLeagueTable }) {
 
       <div className="LeagueTableContainer">
 
+        <span className="pageButtonsLeagueTable">
+
+          <button onClick={() => {
+            navigate(-1);
+          }
+          }>Back</button>
+        </span>
+
         <div class="homepageSummary">
           <div>
             <h1 className="LeagueList-title">{curLeague[0]?.league_name}</h1>
             <p className="style-5">See below for the complete league table for the {curLeague[0]?.league_name}.</p>
-            <p className="style-5">Users can explore statistics by team and click on </p>
+            <p className="style-5">Users can explore statistics by team by clicking on the corresponding row in the league table.</p>
           </div>
         </div>
         {/* <h1 className="LeagueTable-title">{curLeague[0]?.league_name}</h1> */}

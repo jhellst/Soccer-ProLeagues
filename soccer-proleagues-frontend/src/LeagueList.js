@@ -7,12 +7,7 @@ import LeagueListRow from "./LeagueListRow";
 
 function LeagueList({ user, leagues, title, followedLeagueIds, handleSubmitFollowedLeagues, followLeague, unfollowLeague, isUserList }) {
   // const [isLoaded, setIsLoaded] = useState(false);
-  // const [leaguesToFollow, setLeaguesToFollow] = useState({});
-  // const [leaguesToUnfollow, setLeaguesToUnfollow] = useState({});
   const navigate = useNavigate();
-
-  console.log("League List!", leagues);
-
 
   return (
 
@@ -34,7 +29,7 @@ function LeagueList({ user, leagues, title, followedLeagueIds, handleSubmitFollo
 
             <p className="style-5">See below for a list of all Pro Soccer Leagues tracked in our records.</p>
             {(isUserList === "True") ?
-              <p className="style-5">Click the remove button (X) to remove that league from your follow list.</p> :
+              <p className="style-5">Click the remove button (X) to remove a league from your follow list.</p> :
               <p className="style-5">Toggle the checkboxes to follow and unfollow leagues.</p>
             }
               <p className="style-5">Click on a League entry to view its detailed league table.</p>
@@ -45,12 +40,12 @@ function LeagueList({ user, leagues, title, followedLeagueIds, handleSubmitFollo
         <table className="LeagueListTable">
           <thead>
             <tr>
-              <th className="LeagueTable-Column"></th>
-              <th scope="col" className="LeagueTable-Column">League</th>
-              <th scope="col" className="LeagueTable-Column">Description</th>
-              {/* <th scope="col" className="LeagueTable-Column">League Data Last Updated:</th> */}
-              {user && <th scope="col" className="LeagueTable-Column-CheckCircle"></th>}
+              <th className="LeagueList-Column"></th>
+              <th scope="col" className="LeagueList-Column">League</th>
+              <th scope="col" className="LeagueList-Column">Description</th>
               {/* <th scope="col" class="LeagueTable-Column">Country / Region</th> */}
+              {user && <th scope="col" className="LeagueList-Column-CheckCircle"></th>}
+              {/* <th scope="col" className="LeagueTable-Column">League Data Last Updated:</th> */}
             </tr>
 
           </thead>

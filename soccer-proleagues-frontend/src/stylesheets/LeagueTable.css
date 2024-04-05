@@ -5,7 +5,10 @@ table {margin: 2%}
   color: #e5e7eb;
   border-radius: 100px;
   border: 3px solid black;
-  /* bordrgb(145, 145, 146)us: 8%; */
+}
+
+.LeagueTableContainer{
+  margin-top: 0;
 }
 
 .LeagueTable-Headers tr{
@@ -44,7 +47,7 @@ tr:nth-child(even) {
 }
 
 tr:nth-child(odd) {
-  background-color: #ffffff; /* Change to your desired background color */
+  background-color: #ffffff;
   background-color: rgba(31, 41, 55);
 
 }
@@ -53,3 +56,17 @@ tr:hover {
   background-color: rgb(141, 153, 170);
 }
 
+.pageButtonsLeagueTable {
+  display: flex;
+  flex-direction: row-reverse;
+  padding-right: 1%;
+  width: 100%;
+}
+
+.pageButtonsLeagueTable > button, .pageButtonsLeagueTable > div {
+  font-size: small;
+  font-weight: bold;
+  width: 200px;
+  height: 40px;
+  margin: 1% 1% 0% 1%;
+}

@@ -2,20 +2,6 @@
   color: #e5e7eb;;
 }
 
-/* table {margin: 2%} */
-/*
-.TeamCard {
-  align-content: center;
-  border: 2px solid #000;
-  border-radius: 10px;
-  overflow: hidden;
-  width: 30%;
-  margin: 20px;
-  padding: 20px;
-  background-color: #282c34;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-} */
-
 th{
 	background-color: black;
 	color: #ffe221;
@@ -30,10 +16,16 @@ th{
   /* border: 2px solid #000; */
   border-radius: 10px;
   margin: 20px;
+  /* width: 90%;
+  max-width: 1200px; */
 }
 
 .LeagueList > table > thead > tr{
   background-color: #e5e7eb;
+}
+
+.LeagueList-Column {
+  color: white;
 }
 
 tr{
@@ -44,6 +36,7 @@ table {margin: 2%}
 
 .LeagueListTable {
   width: 90%;
+  max-width: 1200px;
   border-collapse: collapse;
   margin: 3%;
   /* overflow: hidden; */
@@ -84,16 +77,14 @@ tr:hover {
   background-color: rgb(141, 153, 170);
 }
 
-.LeagueTable-Column-CheckCircle {
+.LeagueList-Column-CheckCircle {
   width: 4%;
 }
 
 .pageButtonsLeague {
-  width: 200px;
-  position: relative;
-  top: 10%;
-  left: 38.5%;
-  font-size: 18px;
+  display: flex;
+  flex-direction: row-reverse;
+  padding-right: 1%;
 }
 
 .pageButtonsLeague > button, .pageButtonsLeague > div {
@@ -101,7 +92,5 @@ tr:hover {
   font-weight: bold;
   width: 200px;
   height: 40px;
-  margin: 1% 1% 2.5% 1%;
-  right: 2%;
-  top: 2%;
+  margin: 1% 1% 0% 1%;
 }

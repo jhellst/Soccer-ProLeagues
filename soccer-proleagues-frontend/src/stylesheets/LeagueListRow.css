@@ -5,8 +5,8 @@
 
 .LeagueTable-Column-CheckCircle {
   padding-right: 2.5%;
-  /* align-content: center;
-  justify-content: center; */
+  /* align-content: center; */
+  justify-content: center;
 }
 
 .LeagueListRow > a {
