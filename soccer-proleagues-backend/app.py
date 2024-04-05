@@ -296,7 +296,6 @@ def get_followed_leagues(user_id):
     user = User.query.filter_by(id=user_id).one_or_none()
 
     followed_leagues = user.leagues_followed_by_user
-    print("followed_leagues", followed_leagues)
 
     leagues = [{"league_name": league.league_name,
                 "league_country": league.league_country,
