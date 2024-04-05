@@ -1,19 +1,20 @@
 button {
-
   cursor: pointer;
   outline: 0;
   color: #fff;
   /* background-color: #086d48; */
   border-color: #0d6efd;
   display: inline-block;
-  font-weight: 400;
+  font-weight: bold;
   line-height: 1.5;
   text-align: center;
   border: 1px solid transparent;
   padding: 6px 12px;
-  font-size: 16px;
+  font-size: small;
   border-radius: .25rem;
   margin: .5rem;
+  width: 200px;
+  height: 40px;
   transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
   :hover {
       color: #fff;
@@ -48,19 +49,12 @@ button {
   margin: 0px;
 }
 
-/* .UserLink {
-  display: flex;
-  flex-direction: column;
-} */
-
-
-
-
-
 .homepageSummary {
   border-radius: 20px;
   width: 50%;
-  margin: 15px;
+  max-width: 900px;
+  margin-top: 3%;
+  margin-bottom: 2%;
   background-color: rgba(237, 237, 237, 0.207);
   display: grid;
   place-items: center;
@@ -68,4 +62,8 @@ button {
   background-position: 50% 50%;
   box-sizing: border-box;
   padding: 0.5%;
+}
+
+.homepageButtonContainer {
+  display: flex;
 }

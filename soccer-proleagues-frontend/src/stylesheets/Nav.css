@@ -1,7 +1,8 @@
 .NavBar {
   height: 60px;
   /* background-color: rgb(205, 224, 241); */
-  background-color: #66747b;
+  /* background-color: #66747b; */
+  background-color: #b9c4c9a0;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -15,12 +16,13 @@ a {
 }
 
 .NavBar a {
-  /* color: rgb(19, 86, 19); */
-  color: rgb(8, 37, 8);
+  /* color: rgb(8, 37, 8); */
+  color: black;
   font-weight: bold;
 }
 
 .NavBar a.active {
-  color: rgb(186, 186, 230);
+  /* color: rgb(186, 186, 230); */
+  color: white;
   font-weight: 700;
 }
