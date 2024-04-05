@@ -2,25 +2,27 @@ import { useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import CheckCircleToggleLeagues from "./CheckCircleLeagues";
 import "./stylesheets/LeagueListRow.css";
-import RemoveButtonLeague from "./RemoveButtonLeague";
+import RemoveButton from "./RemoveButton";
 
 
 function LeagueListRow({ user_id, leagueId, leagueName, leagueUrl, leagueCountry, leagueDescription, lastUpdatedDate, submitFollowedLeagues, addLeagueToFollowList, addLeagueToUnfollowList, followLeague, unfollowLeague, isUserList, isFollowedByUser }) {
   // const [isLoaded, setIsLoaded] = useState(false);
 
-  console.log("leagueDescription", leagueDescription);
-
   return (
 
     <tr className="LeagueListRow">
       <td>{leagueId}</td>
+      <td>
       <Link to={`/leagues/${leagueId}`}>
-        <td className="leagueName">{leagueName}</td>
+        <div className="leagueName">{leagueName}</div>
       </Link>
+      </td>
       <td>{leagueDescription}</td>
       {/* <td>{lastUpdatedDate}</td> */}
       {(isFollowedByUser === true && isUserList === "True") ?
-        <RemoveButtonLeague listType="League" unfollowLeague={unfollowLeague} user_id={user_id} id={leagueId} /> :
+        <td className="LeagueTable-Column-RemoveButton">
+          <RemoveButton listType="League" unfollowLeague={unfollowLeague} user_id={user_id} id={leagueId} />
+        </td> :
 
         user_id &&
         <td className="LeagueTable-Column-CheckCircle">

@@ -11,14 +11,18 @@ function Homepage({ user }) {
     <div className="Homepage">
 
 
-      <div class="homepageSummary">
-        <div class="style-3"><img src={logo} alt="Soccer ProLeagues Title/Logo" width="260" height="260" class="style-4" /></div>
-        <p class="style-5">Soccer ProLeagues uses web-scraped data to populate team and league statistics from various pro soccer leagues. Users can log in and select teams and leagues to follow, allowing the user to create their own customized pages including their favorite leagues!</p><a href="https://github.com/jhellst/Soccer-ProLeagues" class="style-8"><button class="style-9">See Project Details</button></a>
+      <div className="homepageSummary">
+        <div className="style-3"><img src={logo} alt="Soccer ProLeagues Title/Logo" width="260" height="260" className="style-4" /></div>
+        {/* <p class="style-5">Soccer ProLeagues uses web-scraped data to display team and league statistics for various professional soccer leagues.</p> */}
+        <p className="style-5">Soccer ProLeagues uses web-scraped data to display team and league statistics from various professional soccer leagues.</p>
+        <p className="style-5">Users can log in and select teams and leagues to follow, providing access to their own customized pages including their favorite leagues!</p><a href="https://github.com/jhellst/Soccer-ProLeagues" className="style-8"><button className="style-9">See Project Details</button></a>
+
+
       </div>
 
       {user ?
         <>
-          <h2>Welcome back, {user.username}!</h2>
+          <h2 className="userWelcomeMessage">Welcome back, {user.username}!</h2>
           <div className="homepageButtonContainer">
             <NavLink to={"/users/" + user.user_id + "/leagues"}><button className="UserLink">My Followed Leagues</button></NavLink>
             <NavLink to={"/users/" + user.user_id + "/teams"}><button className="UserLink">My Followed Teams</button></NavLink>

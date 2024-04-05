@@ -57,3 +57,7 @@ html {
     transform: rotate(360deg);
   }
 }
+
+.LeagueList-title {
+font-size: 900;
+}

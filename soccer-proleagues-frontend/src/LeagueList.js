@@ -9,6 +9,7 @@ function LeagueList({ user, leagues, title, followedLeagueIds, handleSubmitFollo
   // const [isLoaded, setIsLoaded] = useState(false);
   const navigate = useNavigate();
 
+
   return (
 
     <>
@@ -23,7 +24,7 @@ function LeagueList({ user, leagues, title, followedLeagueIds, handleSubmitFollo
 
       <div className="LeagueList">
 
-        <div class="homepageSummary">
+        <div className="homepageSummary">
           <div>
             <h1 className="LeagueList-title">{title}</h1>
 
@@ -36,14 +37,13 @@ function LeagueList({ user, leagues, title, followedLeagueIds, handleSubmitFollo
           </div>
         </div>
 
-        {/* <h1 className="LeagueList-title">{title}</h1> */}
         <table className="LeagueListTable">
           <thead>
             <tr>
               <th className="LeagueList-Column"></th>
               <th scope="col" className="LeagueList-Column">League</th>
               <th scope="col" className="LeagueList-Column">Description</th>
-              {/* <th scope="col" class="LeagueTable-Column">Country / Region</th> */}
+              {/* <th scope="col" className="LeagueTable-Column">Country / Region</th> */}
               {user && <th scope="col" className="LeagueList-Column-CheckCircle"></th>}
               {/* <th scope="col" className="LeagueTable-Column">League Data Last Updated:</th> */}
             </tr>
