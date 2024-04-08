@@ -69,13 +69,10 @@ def register_user():
     db.session.add(new_user)
     db.session.commit()
 
-    # session["user_id"] = new_user.id
-    # print("session@@@", session)
-
     # TODO: The identity of this token should be a dict with id and username.
     user_info = {"username": username, "user_id": new_user.id}
     access_token = create_access_token(identity=json.dumps(user_info))
-    print("access_token@@@register", access_token)
+    # print("access_token@@@register", access_token)
 
     return jsonify(access_token=access_token)
 
@@ -98,8 +95,7 @@ def login_user():
     # access_token = create_refresh_token(identity=username)
     user_info = {"username": username, "user_id": user.id}
     access_token = create_access_token(identity=json.dumps(user_info))
-
-    print("access_token@@@login", access_token)
+    # print("access_token@@@login", access_token)
 
     return jsonify(access_token=access_token)
 
@@ -109,15 +105,14 @@ def login_user():
 def get_token(username):
     user_info = User.query.filter_by(username=username).one_or_none()
     access_token = create_access_token(identity=json.dumps(user_info))
+    # print("current_user@token", current_user)
     return jsonify(access_token=access_token)
-    # print("current_user@/token", current_user)
-    # return jsonify(logged_in_as=current_user), 200
 
 
 # TODO: Figure out this route with jwt library.
 @app.route("/logout", methods=["POST"])
 def logout_user():
-    print("session@@logout", session)
+    # print("session@@logout", session)
     session.pop("user_id")
     return "200"
 
@@ -182,9 +177,7 @@ def get_all_leagues():
 @cross_origin()
 def follow_league(user_id, league_id):
     """Follows a league, to be displayed on the user's league page (or homepage)."""
-    # user_id = session["user_id"]
-
-    print("Follow_league@backend", user_id, league_id)
+    # print("Follow_league@backend", user_id, league_id)
 
     # Checks if user exists.
     user = db.session.query(User).filter(User.id == user_id).one_or_none()
@@ -210,8 +203,7 @@ def follow_league(user_id, league_id):
 @cross_origin()
 def unfollow_league(user_id, league_id):
     """Unfollows a league, to be removed from the user's custom league page."""
-
-    print("Unfollow_league@backend", user_id, league_id)
+    # print("Unfollow_league@backend", user_id, league_id)
 
     # Checks if user exists.
     user = db.session.query(User).filter(User.id == user_id).one_or_none()
@@ -237,8 +229,7 @@ def unfollow_league(user_id, league_id):
 @cross_origin()
 def follow_team(user_id, team_id):
     """Follows a team, to be displayed on the user's custom team page."""
-
-    print("Follow_team@backend", user_id, team_id)
+    # print("Follow_team@backend", user_id, team_id)
 
     # Checks if user exists.
     user = db.session.query(User).filter(User.id == user_id).one_or_none()
@@ -263,8 +254,7 @@ def follow_team(user_id, team_id):
 @cross_origin()
 def unfollow_team(user_id, team_id):
     """Unfollows a team, to be removed from the user's custom team page."""
-
-    print("Unfollow_team@backend", user_id, team_id)
+    # print("Unfollow_team@backend", user_id, team_id)
 
     # Checks if user exists.
     user = db.session.query(User).filter(User.id == user_id).one_or_none()
@@ -296,6 +286,7 @@ def get_followed_leagues(user_id):
     user = User.query.filter_by(id=user_id).one_or_none()
 
     followed_leagues = user.leagues_followed_by_user
+    # .order_by(League.league_name)
 
     leagues = [{"league_name": league.league_name,
                 "league_country": league.league_country,
@@ -320,7 +311,7 @@ def get_followed_teams(user_id):
     user = User.query.filter_by(id=user_id).one_or_none()
 
     followed_teams = user.teams_followed_by_user
-    print("followed_teams", followed_teams)
+    # print("followed_teams", followed_teams)
 
     teams = [{"team_name": team.team_name,
               "team_name_abbrev": team.team_name_abbrev,
@@ -382,7 +373,7 @@ def get_all_teams():
                                  StatisticsForLeague.goals_against,
                                  StatisticsForLeague.goals_differential,
                                  StatisticsForLeague.points).filter(
-        StatisticsForLeague.team_id == Team.id)
+        StatisticsForLeague.team_id == Team.id).order_by(Team.team_name)
 
     teams = [TeamInfoForLeague(team.team_id, team.league_id, team.team_name,
                                team.team_name_abbrev, team.team_crest, team.team_hyperlink,
@@ -403,7 +394,7 @@ def get_team(team_id):
     if not team:
         return jsonify({"error": "Unauthorized"}), 401
 
-    # Refine this route to return data for league performance AND team details.
+    # Consider Refinining this route to return data for league performance AND team details.
     return jsonify({"team_name": team.team_name,
                     "team_name_abbrev": team.team_name_abbrev,
                     "team_crest": team.team_crest,
@@ -454,20 +445,6 @@ def page_not_found(e):
     """Show 404 NOT FOUND page."""
 
     return render_template('404.html'), 404
-
-
-# Steps to automate update to include any new leagues added.:
-# 1) Scrape full list of tables, returning a dictionary with the league name and hyperlink to their league table.
-# URL = https://www.theguardian.com/football/tables # URL for all league tables.
-
-# 2) Put each league name + hyperlink into a database table -> this will be used to show a list of leagues to add (that also shows which are already added).
-
-# 3) When you select those leagues and click submit, app begins to scrape the data for the selected leagues.
-#       - You will be directed to your personalized "user homepage", which will have a list showing each league name with a link to the league table.
-#       - The league table is generated from our database, with styled table + visualization options to chart the league.
-#       - Consider removing teams that aren't scraped (or archiving those league tables).
-
-# Long-term: Add user login + authentication. User account can login to access earlier scraped
 
 
 # if __name__ == '__main__':

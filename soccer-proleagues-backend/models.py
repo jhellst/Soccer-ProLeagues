@@ -41,10 +41,10 @@ class User(db.Model):
     )
 
     teams_followed_by_user = db.relationship(
-        'Team', secondary='teams_followed_by_users', backref='users')  # TODO: Check for accuracy
+        'Team', secondary='teams_followed_by_users', backref='users', order_by='Team.team_name')
 
     leagues_followed_by_user = db.relationship(
-        'League', secondary='leagues_followed_by_users', backref='users')  # TODO: Check for accuracy
+        'League', secondary='leagues_followed_by_users', backref='users', order_by='League.league_name')
 
     def __repr__(self):
         return f"<User #{self.id}: {self.username}, {self.password}>"
@@ -84,13 +84,6 @@ class User(db.Model):
 
         return False
 
-    # @classmethod
-    # def follow_league(cls, league_id):
-    #     """Follow a league. Adds league to user's list of followed leagues."""
-
-    #     db.session.add(user)
-    #     return user
-
 
 class Team(db.Model):
     """Store information for an individual pro soccer team."""
@@ -123,14 +116,12 @@ class Team(db.Model):
         'League', secondary='statistics_for_leagues', backref='teams')
 
     users_following_team = db.relationship(
-        'User', secondary='teams_followed_by_users', backref='teams')  # TODO: Check for accuracy
+        'User', secondary='teams_followed_by_users', backref='teams')
 
     @classmethod
     def get_team(cls, team_id):
         """Gets a team and statistics for all leagues it is a member of."""
         team = db.session.query(Team).filter(Team.id == team_id)
-
-        # league_table = [TeamInfo(team) for team in current_league_table]
         return team
 
 
@@ -177,7 +168,7 @@ class League(db.Model):
         'Team', secondary='statistics_for_leagues', backref='leagues')
 
     users_following_league = db.relationship(
-        'User', secondary='leagues_followed_by_users', backref='leagues')  # TODO: Check for accuracy
+        'User', secondary='leagues_followed_by_users', backref='leagues')
 
     @classmethod
     def get_league_url(cls, league_id):
@@ -284,21 +275,20 @@ class TeamsFollowedByUser(db.Model):
         primary_key=True,
     )
 
-    @classmethod  # TODO: Refine this and test.
+    @classmethod
     def follow_team(cls, team_id, user_id):
         """Follows a team to be included in the user's custom team page."""
-        print("team_and_user_id@backend", team_id, user_id)
+        # print("team_and_user_id@backend", team_id, user_id)
         team_follow = TeamsFollowedByUser(user_id=user_id, team_id=team_id)
 
         db.session.merge(team_follow)
         db.session.commit()
         return team_follow.team_id
 
-    @classmethod  # TODO: Refine this and test.
+    @classmethod
     def unfollow_team(cls, team_id, user_id):
         """Unfollows a team that was included in the user's custom team page."""
-
-        print("unfollow_team", team_id, user_id)
+        # print("unfollow_team", team_id, user_id)
         team_unfollow = TeamsFollowedByUser.query.filter(TeamsFollowedByUser.team_id == team_id).filter(
             TeamsFollowedByUser.user_id == user_id)
 
@@ -310,13 +300,6 @@ class TeamsFollowedByUser(db.Model):
             user_id: user_id,
             team_id: team_id
         }
-
-    # @classmethod # TODO: Refine this and test.
-    # def get_followed_teams(cls, team_id, user_id):
-    #     """Gets a list of teams that a user is following."""
-    #     followed_teams = db.session.query(Team, TeamsFollowedByUser).filter(Team.id == team_id).filter(TeamsFollowedByUser.user_id == user_id)
-
-    #     return followed_teams
 
 
 class LeaguesFollowedByUser(db.Model):
