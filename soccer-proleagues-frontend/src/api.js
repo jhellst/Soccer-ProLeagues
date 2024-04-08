@@ -25,9 +25,7 @@ class SoccerLeaguesApi {
     const body = (method !== "GET")
       ? JSON.stringify(data)
       : undefined;
-    console.log("Endpoint@Request", endpoint, body, headers);
     const resp = await fetch(url, { method, body, headers });
-    console.log("resp", resp);
 
     //fetch API does not throw an error, have to dig into the resp for msgs
     if (!resp.ok) {

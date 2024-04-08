@@ -19,7 +19,8 @@ code {
 .form-label {
   text-align: left;
   font-weight: 700;
-  color: rgb(88, 88, 88)
+  color: white;
+  padding-bottom: 1%;
 }
 
 input {
