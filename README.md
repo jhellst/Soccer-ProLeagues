@@ -102,7 +102,9 @@ Of course, no one template will serve all projects since your needs may be diffe
 * [![React][React.js]][React-url]
 * [![PostgreSQL][PostgreSQL]][PostgreSQL-url]
 <!-- * [![Chart.js][Chart.js]][Chart.js-url] -->
+* [![JWT][JWT]][JWT-url]
 * [![bs4][bs4]][bs4-url]
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -118,8 +120,8 @@ Of course, no one template will serve all projects since your needs may be diffe
 [Chart.js-url]: https://www.chartjs.org/ -->
 <!-- [bs4]: -->
 [bs4-url]: https://beautiful-soup-4.readthedocs.io/en/latest/
-<!-- [JSON Web Token] :
-[JSON Web Token-url] : -->
+[JWT]: https://img.shields.io/badge/JWT-black?style=for-the-badge&logo=JSON%20web%20tokens
+[JWT-url]: https://www.npmjs.com/package/jsonwebtoken
 
 <!-- GETTING STARTED -->
 ## Getting Started
@@ -309,3 +311,5 @@ Joshua Hellstrom - [LinkedIn](https://www.linkedin.com/in/joshua-hellstrom/) - [
 [Chart.js-url]: https://www.chartjs.org/
 [bs4]: https://img.shields.io/badge/Beautiful%20Soup%204-3b3b3b
 [bs4-url]: https://beautiful-soup-4.readthedocs.io/en/latest/
+[JWT]: https://img.shields.io/badge/JWT-black?style=for-the-badge&logo=JSON%20web%20tokens
+[JWT-url]: https://www.npmjs.com/package/jsonwebtoken
