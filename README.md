@@ -192,6 +192,7 @@ To get a local copy up and running follow these simple example steps. -->
    ```
 4. To login, either signup a new user or login with one of the test users:
    ```sh
+   (username: TestUser, password: test)
    (username: a, password: a)
    (username: b, password: b)
    ```

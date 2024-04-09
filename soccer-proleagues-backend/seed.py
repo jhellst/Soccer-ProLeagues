@@ -12,9 +12,11 @@ db.create_all()
 # Add Sample User(s)
 hashed_pwd_1 = bcrypt.generate_password_hash("a").decode('UTF-8')
 hashed_pwd_2 = bcrypt.generate_password_hash("b").decode('UTF-8')
+test_pwd = bcrypt.generate_password_hash("test").decode('UTF-8')
 user_1 = User(username="a", password=hashed_pwd_1)
 user_2 = User(username="b", password=hashed_pwd_2)
-db.session.add_all([user_1, user_2])
+test_user = User(username="TestUser", password=test_pwd)
+db.session.add_all([user_1, user_2, test_user])
 
 # Add Sample League(s)
 epl = League(league_name='English Premier League', league_country='England', league_description='English First Division Professional Soccer League',
@@ -33,14 +35,6 @@ english_championship = League(league_name='English Championship', league_country
                               league_url="https://www.theguardian.com/football/championship/table")
 english_league_one = League(league_name='English League One', league_country='England', league_description='English Third Division Professional Soccer League',
                             league_url="https://www.theguardian.com/football/leagueonefootball/table")
-# english_league_two = League(league_name='English League Two',
-#                             league_url="https://www.theguardian.com/football/leaguetwofootball/table")
-# scottish_championship = League(league_name='Scottish Championship',
-#                                league_url="https://www.theguardian.com/football/scottish-championship/table")
-# scottish_league_one = League(league_name='Scottish League One',
-#                              league_url="https://www.theguardian.com/football/scottish-league-one/table")
-# scottish_league_two = League(league_name='Scottish League Two',
-#                              league_url="https://www.theguardian.com/football/scottish-league-two/table")
 
 db.session.add_all([epl, bundesliga, serie_a, la_liga, ligue_1, scottish_premiership, english_championship, english_league_one])
 
@@ -49,8 +43,6 @@ def update_league_stats(league):
     """Update the stats for a league by re-scraping data from the page. Display all team info."""
     current_league = db.session.query(League).filter(
         League.league_name == league.league_name).one()
-
-    print("current_league", current_league, current_league.league_name, current_league.id)
 
     league_url = League.get_league_url(current_league.id)
 
@@ -92,8 +84,12 @@ for league in [epl, bundesliga, serie_a, la_liga, ligue_1, scottish_premiership,
 league_follow_1 = LeaguesFollowedByUser(user_id=1, league_id=1)
 league_follow_2 = LeaguesFollowedByUser(user_id=1, league_id=2)
 league_follow_3 = LeaguesFollowedByUser(user_id=2, league_id=2)
+league_follow_4 = LeaguesFollowedByUser(user_id=3, league_id=1)
+league_follow_5 = LeaguesFollowedByUser(user_id=3, league_id=2)
+league_follow_6 = LeaguesFollowedByUser(user_id=3, league_id=3)
+league_follow_7 = LeaguesFollowedByUser(user_id=3, league_id=5)
 
-db.session.add_all([league_follow_1, league_follow_2, league_follow_3])
+db.session.add_all([league_follow_1, league_follow_2, league_follow_3, league_follow_4, league_follow_5, league_follow_6, league_follow_7])
 
 team_follow_1 = TeamsFollowedByUser(user_id=1, team_id=1)
 team_follow_2 = TeamsFollowedByUser(user_id=1, team_id=2)
@@ -103,10 +99,20 @@ team_follow_5 = TeamsFollowedByUser(user_id=1, team_id=33)
 team_follow_6 = TeamsFollowedByUser(user_id=1, team_id=39)
 team_follow_7 = TeamsFollowedByUser(user_id=1, team_id=69)
 team_follow_8 = TeamsFollowedByUser(user_id=2, team_id=90)
-team_follow_8 = TeamsFollowedByUser(user_id=2, team_id=99)
+team_follow_9 = TeamsFollowedByUser(user_id=2, team_id=99)
+
+team_follow_10 = TeamsFollowedByUser(user_id=3, team_id=1)
+team_follow_11 = TeamsFollowedByUser(user_id=3, team_id=5)
+team_follow_12 = TeamsFollowedByUser(user_id=3, team_id=12)
+team_follow_13 = TeamsFollowedByUser(user_id=3, team_id=22)
+team_follow_14 = TeamsFollowedByUser(user_id=3, team_id=31)
+team_follow_15 = TeamsFollowedByUser(user_id=3, team_id=42)
+team_follow_16 = TeamsFollowedByUser(user_id=3, team_id=60)
+team_follow_17 = TeamsFollowedByUser(user_id=3, team_id=69)
+team_follow_18 = TeamsFollowedByUser(user_id=3, team_id=99)
+
 
 db.session.add_all([team_follow_1, team_follow_2, team_follow_3, team_follow_4,
-                   team_follow_5, team_follow_6, team_follow_7, team_follow_8])
+                   team_follow_5, team_follow_6, team_follow_7, team_follow_8, team_follow_9, team_follow_10, team_follow_11, team_follow_12, team_follow_13, team_follow_14, team_follow_15, team_follow_16, team_follow_17, team_follow_18])
 
-# db.session.add_all()
 db.session.commit()
