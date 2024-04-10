@@ -27,11 +27,6 @@
   <!-- <h1 align="center">Soccer ProLeagues</h1> -->
 
   <p align="center">
-    <!-- A web app that scrapes data from soccer league tables and renders them in a personalized homepage -->
-    <br />
-    <!-- <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a> -->
-    <!-- <br /> -->
-    <br />
     <a href="https://drive.google.com/file/d/1f4TY-bUpUCd3NxmW6aM77AFWh1wnQlIA/view?usp=sharing">View Demo</a>
   </p>
 </div>
