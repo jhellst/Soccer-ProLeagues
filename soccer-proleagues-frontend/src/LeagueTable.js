@@ -1,26 +1,19 @@
 import { useState, useEffect } from "react";
 import LeagueTableRow from "./LeagueTableRow";
 import TeamsAndLeaguesContext from "./Contexts";
-import LeagueList from "./LeagueList";
 import { useContext } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import "./stylesheets/LeagueTable.css";
-// import LeagueTableRow from "./LeagueTableRow";
 
 
 function LeagueTable({ getLeagueTable }) {
   const [leagueId, setLeagueId] = useState(useParams().league_id);
   const [leagueTable, setLeagueTable] = useState([]);
-  const [leagueName, setLeagueName] = useState(null);
   const teamsAndLeaguesContext = useContext(TeamsAndLeaguesContext);
-
-  const leagueInfo = getLeagueTable(leagueId);
-  const teams = teamsAndLeaguesContext.teams;
   const leagues = teamsAndLeaguesContext.leagues;
 
   const navigate = useNavigate();
   const curLeague = leagues.filter(league => league.league_id == leagueId);
-
 
   useEffect(() => {
     async function setCurrentLeagueTable() {
@@ -36,9 +29,7 @@ function LeagueTable({ getLeagueTable }) {
     return (
 
       <div className="LeagueTableContainer">
-
         <span className="pageButtonsLeagueTable">
-
           <button onClick={() => {
             navigate(-1);
           }
@@ -52,7 +43,6 @@ function LeagueTable({ getLeagueTable }) {
             <p className="style-5">Users can explore statistics by team by clicking on the corresponding row in the league table.</p>
           </div>
         </div>
-        {/* <h1 className="LeagueTable-title">{curLeague[0]?.league_name}</h1> */}
 
         <table className="LeagueTable">
           <thead>

@@ -12,7 +12,6 @@ function xCircle({ listType, unfollowLeague, unfollowTeam, user_id, id }) {
   };
 
 return (
-  // <button className='removeButton' onClick={handleSubmitRemove}></button>
   <xMarkCircle className='removeButton' onClick={handleSubmitRemove}/>
 );
 }

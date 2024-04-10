@@ -6,8 +6,6 @@ import { Link } from "react-router-dom";
 function TeamListRow({ leagueId, leagueName, leagueUrl, lastUpdatedDate }) {
   // const [isLoaded, setIsLoaded] = useState(false);
 
-  console.log("leagueListRow!!", leagueName)
-
   return (
 
     <tr className="wpos">

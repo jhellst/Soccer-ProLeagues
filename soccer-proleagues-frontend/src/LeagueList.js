@@ -2,38 +2,32 @@ import { useContext, useState, useParams } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./stylesheets/LeagueList.css";
 import LeagueListRow from "./LeagueListRow";
-// import TeamsAndLeaguesContext from "./Contexts";
 
 
-function LeagueList({ user, leagues, title, followedLeagueIds, handleSubmitFollowedLeagues, followLeague, unfollowLeague, isUserList }) {
+function LeagueList({ user, leagues, title, followedLeagueIds, followLeague, unfollowLeague, isUserList }) {
   // const [isLoaded, setIsLoaded] = useState(false);
   const navigate = useNavigate();
-
 
   return (
 
     <>
       <span className="pageButtonsLeague">
-
         <button onClick={() => {
           navigate(-1);
         }
         }>Back</button>
       </span>
 
-
       <div className="LeagueList">
-
         <div className="homepageSummary">
           <div>
             <h1 className="LeagueList-title">{title}</h1>
-
             <p className="style-5">See below for a list of all Pro Soccer Leagues tracked in our records.</p>
             {(isUserList === "True") ?
               <p className="style-5">Click the remove button (X) to remove a league from your follow list.</p> :
               <p className="style-5">Toggle the checkboxes to follow and unfollow leagues.</p>
             }
-              <p className="style-5">Click on a League entry to view its detailed league table.</p>
+            <p className="style-5">Click on a League entry to view its detailed league table.</p>
           </div>
         </div>
 
@@ -47,7 +41,6 @@ function LeagueList({ user, leagues, title, followedLeagueIds, handleSubmitFollo
               {user && <th scope="col" className="LeagueList-Column-CheckCircle"></th>}
               {/* <th scope="col" className="LeagueTable-Column">League Data Last Updated:</th> */}
             </tr>
-
           </thead>
 
           <tbody>
@@ -59,14 +52,9 @@ function LeagueList({ user, leagues, title, followedLeagueIds, handleSubmitFollo
             ))}
 
           </tbody>
-
-
         </table>
-
       </div>
-
     </>
-
 
   );
 }

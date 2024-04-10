@@ -10,7 +10,6 @@ import SoccerLeaguesApi from './api';
 import TeamsAndLeaguesContext from './Contexts';
 
 
-// TODO: Write docstrings. Include notes on variable inputs and outputs.
 // TODO: Write tests for all routes.
 // TODO: Remove any unused routes and components.
 // Long-Term: Implement search for teams/leagues.
@@ -134,14 +133,6 @@ function App() {
     }
     setInitialFollowedTeamIds();
   }, [followedTeams]);
-
-
-  // console.log("leagues@", leagues);
-  // console.log("teams@", teams);
-  // console.log("followedleagues@", followedLeagues);
-  // console.log("followedteams@", followedTeams);
-  // console.log("followedteamIds@", followedTeamIds);
-  // console.log("followedLeagueIds@", followedLeagueIds);
 
 
   /** Updates token and sets within local storage (removes if not available) */

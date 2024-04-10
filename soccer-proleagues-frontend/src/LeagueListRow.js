@@ -13,9 +13,9 @@ function LeagueListRow({ user_id, leagueId, leagueName, leagueUrl, leagueCountry
     <tr className="LeagueListRow">
       <td>{leagueId}</td>
       <td>
-      <Link to={`/leagues/${leagueId}`}>
-        <div className="leagueName">{leagueName}</div>
-      </Link>
+        <Link to={`/leagues/${leagueId}`}>
+          <div className="leagueName">{leagueName}</div>
+        </Link>
       </td>
       <td>{leagueDescription}</td>
       {/* <td>{lastUpdatedDate}</td> */}
@@ -23,7 +23,6 @@ function LeagueListRow({ user_id, leagueId, leagueName, leagueUrl, leagueCountry
         <td className="LeagueTable-Column-RemoveButton">
           <RemoveButton listType="League" unfollowLeague={unfollowLeague} user_id={user_id} id={leagueId} />
         </td> :
-
         user_id &&
         <td className="LeagueTable-Column-CheckCircle">
           <CheckCircleToggleLeagues user_id={user_id} league_id={leagueId} submitFollowedLeagues={submitFollowedLeagues} isFollowedByUser={isFollowedByUser} addLeagueToFollowList={addLeagueToFollowList} addLeagueToUnfollowList={addLeagueToUnfollowList} followLeague={followLeague} unfollowLeague={unfollowLeague} isUserList={isUserList} />

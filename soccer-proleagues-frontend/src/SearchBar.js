@@ -1,6 +1,5 @@
 import { useState } from "react";
 
-
 /** Searches as user types, using debounce library. */
 function SearchBar({ handleSearch }) {
   const [searchTerm, setSearchTerm] = useState("");

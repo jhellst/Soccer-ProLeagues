@@ -7,14 +7,11 @@ import "./stylesheets/TeamCardList.css";
 
 function TeamCardList({ user, teams, title, followedTeamIds, followTeam, unfollowTeam, isUserList }) {
   // const [isLoaded, setIsLoaded] = useState(false);
-
   const navigate = useNavigate();
-
 
   return (
     <>
       <span className="pageButtonsLeague">
-
         <button onClick={() => {
           navigate(-1);
         }
@@ -45,7 +42,6 @@ function TeamCardList({ user, teams, title, followedTeamIds, followTeam, unfollo
           ))}
 
         </div>
-
       </div>
     </>
   );

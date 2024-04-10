@@ -10,8 +10,6 @@ function LeagueTableRow({ teamId, teamName, teamNameAbbrev, teamCrest, teamHyper
   const { user } = useContext(userContext);
   // const navigate = useNavigate();
 
-  console.log("LEAGUE_TABLE_ROW", teamName, teamId);
-
 
   return (
     <tr className="LeagueTableRow">

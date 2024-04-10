@@ -1,6 +1,3 @@
-* {
-  color: #e5e7eb;;
-}
 
 th{
 	background-color: black;
@@ -46,7 +43,7 @@ table {margin: 2%}
 
 .SimpleLeagueList th{
   /* color: rgba(156, 163, 175, var(--tw-text-opacity)); */
-  color: #808080;
+  color: white;
 }
 
 /* Basic Table Styling with Rounded Edges */

@@ -7,9 +7,6 @@ import SimpleLeagueListRow from "./SimpleLeagueListRow";
 
 function SimpleLeagueList({ user, leagues, title }) {
   // const [isLoaded, setIsLoaded] = useState(false);
-  // const navigate = useNavigate();
-
-  console.log("leagues@SimpleLeagueList", leagues, "USER", user);
 
   return (
 
@@ -21,21 +18,19 @@ function SimpleLeagueList({ user, leagues, title }) {
           <tr>
             <th className="SimpleLeagueList-Column"></th>
             <th scope="col" className="SimpleLeagueList-Column">League</th>
-            <th scope="col" className="SimpleLeagueList-Column">Country / Region</th>
+            <th scope="col" className="SimpleLeagueList-Column">Description</th>
           </tr>
-
         </thead>
 
         <tbody>
 
           {leagues && leagues.map((league, idx) => (
             <SimpleLeagueListRow key={idx} user_id={user?.user_id} leagueId={league.league_id}
-              leagueName={league.league_name} leagueUrl={league.league_url}
+              leagueName={league.league_name} leagueUrl={league.league_url} leagueDescription={league.league_description}
               lastUpdatedDate={league.last_updated_date} />
           ))}
 
         </tbody>
-
 
       </table>
     </div>

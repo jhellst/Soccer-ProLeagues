@@ -7,7 +7,6 @@ import { NavLink, Link, useNavigate } from "react-router-dom";
  * If user is logged in, show all links to followed_leagues/homepage.
  */
 function Nav({ user, logout }) {
-  // console.log("USER", user, user.username, user.id);
 
   return (
     <nav className="NavBar">

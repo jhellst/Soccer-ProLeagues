@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './stylesheets/RemoveButton.css';
-import { FaCheckCircle, FaRegCircle, FaTimesCircle } from 'react-icons/fa'; // Import check circle icons
+import { FaTimesCircle } from 'react-icons/fa'; // Import x circle icon
 
 
 function RemoveButton({ listType, unfollowLeague, unfollowTeam, user_id, id }) {

@@ -24,7 +24,7 @@ function RoutesList({ user, login, signup, getTeamDetail, leagues, teams, follow
           <Route path="/teams" element={<TeamCardList teams={teams} user={user} title={"All Teams"} followedTeamIds={followedTeamIds} handleSubmitFollowedTeams={handleSubmitFollowedTeams} addTeamToFollowList={addTeamToFollowList} followTeam={followTeam} unfollowTeam={unfollowTeam} isUserList="False" />} />
           <Route path="/leagues" element={<LeagueList user={user} leagues={leagues} followedLeagueIds={followedLeagueIds} handleSubmitFollowedLeagues={handleSubmitFollowedLeagues} followLeague={followLeague} unfollowLeague={unfollowLeague} isUserList="False" title={"All Leagues"} />} />
           <Route path="/leagues/:league_id" element={<LeagueTable getLeagueTable={getLeagueTable} />} />
-          <Route path="/teams/:team_id" element={<SingleTeam user={user} getTeamDetail={getTeamDetail} followedLeagueIds={followedLeagueIds} followedTeamIds={followedTeamIds} />} />
+          <Route path="/teams/:team_id" element={<SingleTeam user={user} leagues={leagues} getTeamDetail={getTeamDetail} followedLeagueIds={followedLeagueIds} followedTeamIds={followedTeamIds} />} />
           <Route path="/login" element={<Navigate to="/" />} />
           <Route path="/signup" element={<Navigate to="/" />} />
           <Route path="*" element={<NotFound />} />
