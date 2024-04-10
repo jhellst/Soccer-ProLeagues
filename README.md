@@ -32,11 +32,9 @@
     <!-- <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a> -->
     <!-- <br /> -->
     <br />
-    <!-- <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a> -->
-    <!-- ·
-    <a href="https://github.com/jhellst/Soccer-ProLeagues/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/jhellst/Soccer-ProLeagues/issues">Request Feature</a> -->
+    <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
+    <a href="https://user-images.githubusercontent.com/6877923/123006036-64e2e780-d3b7-11eb-922e-018994b32da5.mov">View Demo</a>
+    <video src="soccer-proleagues-frontend/src/images/readme/SoccerProLeaguesDemoVideo.mov" width="300" />
   </p>
 </div>
 
@@ -59,12 +57,7 @@
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
-    <!-- <li><a href="#usage">Usage</a></li> -->
-    <!-- <li><a href="#roadmap">Roadmap</a></li> -->
-    <!-- <li><a href="#contributing">Contributing</a></li> -->
-    <!-- <li><a href="#license">License</a></li> -->
     <li><a href="#contact">Contact</a></li>
-    <!-- <li><a href="#acknowledgments">Acknowledgments</a></li> -->
   </ol>
 </details>
 
