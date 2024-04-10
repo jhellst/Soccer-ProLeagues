@@ -68,6 +68,28 @@
   </ol>
 </details>
 
+<details>
+  <summary>Project Screenshots</summary>
+<ul>
+    <li>
+      <div>Homepage</div>
+      <img src="soccer-proleagues-frontend/src/images/readme/1 - homepage.png" alt="Soccer ProLeagues Homepage" width="400" height="250">
+    </li>
+    <li>
+      <div>League-Specific Pages</div>
+      <img src="soccer-proleagues-frontend/src/images/readme/2 - allLeagues.png" alt="All Leagues" width="400" height="250">
+      <img src="soccer-proleagues-frontend/src/images/readme/3 - followedLeagues.png" alt="Followed Leagues" width="400" height="250">
+      <img src="soccer-proleagues-frontend/src/images/readme/5 - leagueTable.png" alt="League Table" width="400" height="250">
+    </li>
+    <li>
+      <div>Team-Specific Pages</div>
+      <img src="soccer-proleagues-frontend/src/images/readme/6 - allTeams.png" alt="All Teams" width="400" height="250">
+      <img src="soccer-proleagues-frontend/src/images/readme/7 - followedTeams.png" alt="Followed Teams" width="400" height="250">
+      <img src="soccer-proleagues-frontend/src/images/readme/4 - singleTeamPage.png" alt="Single Team Page" width="400" height="250">
+    </li>
+
+  </ul>
+</details>
 
 
 <!-- ABOUT THE PROJECT -->
