@@ -9,7 +9,6 @@ from dataClasses import LeagueInfo, TeamInfoForLeague
 from soccerScraper import retrieveLeagueInfo, TeamInfo
 from datetime import datetime, timedelta, timezone
 from flask_bcrypt import Bcrypt
-
 from flask_jwt_extended import create_access_token
 from flask_jwt_extended import create_refresh_token
 from flask_jwt_extended import get_jwt_identity
@@ -69,11 +68,9 @@ def register_user():
     db.session.add(new_user)
     db.session.commit()
 
-    # TODO: The identity of this token should be a dict with id and username.
     user_info = {"username": username, "user_id": new_user.id}
     access_token = create_access_token(identity=json.dumps(user_info))
     # print("access_token@@@register", access_token)
-
     return jsonify(access_token=access_token)
 
 
@@ -96,7 +93,6 @@ def login_user():
     user_info = {"username": username, "user_id": user.id}
     access_token = create_access_token(identity=json.dumps(user_info))
     # print("access_token@@@login", access_token)
-
     return jsonify(access_token=access_token)
 
 
@@ -286,7 +282,6 @@ def get_followed_leagues(user_id):
     user = User.query.filter_by(id=user_id).one_or_none()
 
     followed_leagues = user.leagues_followed_by_user
-    # .order_by(League.league_name)
 
     leagues = [{"league_name": league.league_name,
                 "league_country": league.league_country,
@@ -399,7 +394,7 @@ def get_team(team_id):
                     "team_name_abbrev": team.team_name_abbrev,
                     "team_crest": team.team_crest,
                     "team_hyperlink": team.team_hyperlink,
-                    "leagues_team_is_member_of": [{"league_name": league.league_name, "league_id": league.id, "league_url": league.league_url, "last_updated_date": league.last_updated_date, } for league in team.leagues_team_is_member_of]})
+                    "leagues_team_is_member_of": [{"league_name": league.league_name, "league_id": league.id, "league_url": league.league_url, "league_description": league.league_description, "last_updated_date": league.last_updated_date, } for league in team.leagues_team_is_member_of]})
 
 
 @app.route("/leagues/<int:league_id>/update", methods=["POST"])
