@@ -31,7 +31,7 @@ mdurl==0.1.2
 multidict==6.0.4
 openai==0.28.1
 psycopg2-binary==2.9.7
-Pygments @ file:///private/tmp/pygments-20230630-5530-1s8evfm/Pygments-2.15.1
+Pygments==2.18.0 # Changed.
 PyJWT==2.8.0
 python-dateutil==2.8.2
 python-dotenv==1.0.0
