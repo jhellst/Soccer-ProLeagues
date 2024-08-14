@@ -1,10 +1,11 @@
+version: '3.8'
+
 services:
-  flask_app:
-    container_name: flask_app
-    image: joshhellstrom/flask_live_app:1.0.0
+  web:
     build: .
-    command: flask run --host=0.0.0.0 --port=4000
+    command: flask run --host=0.0.0.0
     ports:
+<<<<<<< HEAD:soccer-proleagues-backend/docker-compose.ym
 <<<<<<< HEAD:soccer-proleagues-backend/docker-compose.yaml
       - "4000:4000"
     environment:
@@ -12,6 +13,9 @@ services:
 =======
       - "5000:5000"
 >>>>>>> parent of 817b8a0 (Working to create docker files and environment.):soccer-proleagues-backend/docker-compose.ym
+=======
+      - "8000:8000"
+>>>>>>> parent of e7e3800 (Added docker-compose.):soccer-proleagues-backend/docker-compose.yaml
     volumes:
       - .:/app
     depends_on:
@@ -20,17 +24,8 @@ services:
   db:
     image: postgres:13
     environment:
-      POSTGRES_USER: joshhellstrom
-      POSTGRES_PASSWORD: Budjos123
-      POSTGRES_DB: docker_soccer_proleagues
-    volumes:
-      - pgdata:/var/lib/postgresql/data
-      - /docker-entrypoint-initdb.d/init-seed.sh
-      - /scripts/db/dump.py
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: mydatabase
     ports:
       - "5432:5432"
-    command: flask run --host=0.0.0.0
-
-
-volumes:
-  pgdata: {}
