@@ -5,9 +5,13 @@ services:
     build: .
     command: flask run --host=0.0.0.0 --port=4000
     ports:
+<<<<<<< HEAD:soccer-proleagues-backend/docker-compose.yaml
       - "4000:4000"
     environment:
       DB_URL: postgresql://joshhellstrom:Budjos123@db:5432/postgres
+=======
+      - "5000:5000"
+>>>>>>> parent of 817b8a0 (Working to create docker files and environment.):soccer-proleagues-backend/docker-compose.ym
     volumes:
       - .:/app
     depends_on:
