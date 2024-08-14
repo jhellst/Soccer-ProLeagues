@@ -179,6 +179,7 @@ def follow_league(user_id, league_id):
     user = db.session.query(User).filter(User.id == user_id).one_or_none()
     if not user:
         return jsonify({"error": "Unauthorized"}), 401
+    print("user!", user)
 
     # Checks if league exists.
     league = db.session.query(League).filter(
